@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        {% load static %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Imp & Skizz Podcast Index</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/imp-skizz-podcast-logo-small.webp' %}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +13,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         <!-- Assets -->
-        {% load static %}
         <link href="{% static 'css/output.css' %}" rel="stylesheet">
         <link href="{% static 'fontawesome/css/fontawesome.css' %}" rel="stylesheet" />
         <link href="{% static 'fontawesome/css/brands.css' %}" rel="stylesheet" />
@@ -19,13 +20,43 @@
         <script src="{% static 'js/htmx.2.0.1.js' %}"></script>
     </head>
     <body class="font-poppins bg-background text-text">
-        <section class="container py-8 space-y-8">
-            <h1 class="text-3xl">Imp & Skizz Podcast Index</h1>
-            <p>Welcome to the Imp & Skizz Podcast index. Your 1-stop shop for seeing the full range of published podcasts by ImpulseSV and SkizzleMan</p>
+        <section class="py-12">
+            <div class="container space-y-8">
+                <div class="flex gap-2 justify-start items-center">
+                    <img src="{% static 'images/imp-skizz-podcast-logo-medium.webp' %}" width="64" height="64">
+                    <h1 class="text-3xl">Imp & Skizz Podcast Index</h1>
+                </div>
+                <p>Welcome to the Imp & Skizz Podcast index. Your 1-stop shop for seeing the full range of published podcasts by ImpulseSV and SkizzleMan</p>
+            </div>
         </section>
 
-        <section class="container py-8">
-            <div id="filter-results" class="space-y-12">
+        <section class="py-12 bg-primary">
+            <div class="container text-center">
+                <h2>Stream the Imp & Skizz Podcast on...</h2>
+                <div class="mt-4 flex gap-2 justify-center flex-row">
+                    <a href="https://www.youtube.com/@impandskizzpodcast" target="_blank" class="btn bg-youtube">
+                        <i class="fa-brands fa-youtube"></i>
+                        Youtube
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="https://open.spotify.com/show/1EPoDsUI8BnhLbdERd5Y4w" target="_blank" class="btn bg-spotify">
+                        <i class="fa-brands fa-spotify"></i>
+                        Spotify
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="https://podcasts.apple.com/gb/podcast/imp-and-skizz-podcast/id1639033817" target="_blank" class="btn bg-apple-podcasts">
+                        <i class="fa-brands fa-apple"></i>
+                        Apple Podcasts
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12">
+            <div id="filter-results" class="container space-y-12">
                 {% include 'podcasts/partials/filter_results.html' %}
             </div>
         </section>

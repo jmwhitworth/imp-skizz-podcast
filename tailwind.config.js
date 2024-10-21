@@ -16,6 +16,7 @@ module.exports = {
         'accent': '#755774',
         'youtube': '#cc181e',
         'spotify': '#1db954',
+        'apple-podcasts': '#7224d8',
        },
     },
     container: {

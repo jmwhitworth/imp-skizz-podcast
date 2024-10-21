@@ -7,17 +7,29 @@
     <h3 class="text-xl">{{ podcast.title }}</h3>
 
     <div class="flex gap-2 flex-row">
-        <a href="https://youtube.com/watch/{{ podcast.youtube_id }}" target="_blank" class="btn bg-youtube">
+        {% if podcast.youtube_id %}
+        <a href="https://youtube.com/watch/{{ podcast.youtube_id }}" target="_blank" class="btn bg-youtube text-sm">
             <i class="fa-brands fa-youtube"></i>
             Youtube
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
+        {% endif %}
 
-        <a href="https://open.spotify.com/episode/{{ podcast.spotify_id }}" target="_blank" class="btn bg-spotify">
+        {% if podcast.spotify_id %}
+        <a href="https://open.spotify.com/episode/{{ podcast.spotify_id }}" target="_blank" class="btn bg-spotify text-sm">
             <i class="fa-brands fa-spotify"></i>
             Spotify
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
+        {% endif %}
+
+        {% if podcast.apple_music_url %}
+            <a href="{{ podcast.apple_music_url }}" target="_blank" class="btn bg-apple-podcasts text-sm">
+                <i class="fa-brands fa-apple"></i>
+                Apple
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        {% endif %}
     </div>
 
     <p class="text-text/75">Published: {{ podcast.release_date }}</p>
@@ -26,11 +38,11 @@
         <span>Tags:</span>
         {% for tag in podcast.getTags %}
             <li class="cursor-pointer inline-block underline"
-                    hx-get="{% url 'filter_podcasts' %}?tags={{ tag.id }}"
-                    hx-target="#filter-results"
-                    hx-swap="innerHTML">
+                hx-get="{% url 'filter_podcasts' %}?tags={{ tag.id }}"
+                hx-target="#filter-results"
+                hx-swap="innerHTML">
                 {{ tag }}
             </li>
         {% endfor %}
-    <ul>
-</div>
+        <ul>
+        </div>

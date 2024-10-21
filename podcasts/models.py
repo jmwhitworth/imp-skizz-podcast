@@ -11,6 +11,7 @@ class Podcast(models.Model):
     episode_number = models.IntegerField(unique=True, default=0)
     youtube_id = models.CharField(max_length=50, default="")
     spotify_id = models.CharField(max_length=50, default="")
+    apple_music_url = models.CharField(max_length=255, default="")
     release_date = models.DateField()
     tags = models.ManyToManyField(Tag, related_name='podcasts')
 
