@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast Index</title>
-    <script src="https://unpkg.com/htmx.org@1.9.3"></script>
-</head>
-<body>
-    <h1>Podcast Index</h1>
-    <div id="filter-results">
-        {% include 'podcasts/partials/filter_results.html' %}
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imp & Skizz Podcast Index</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!-- Assets -->
+        {% load static %}
+        <link href="{% static 'css/output.css' %}" rel="stylesheet">
+        <script src="{% static 'js/htmx.2.0.1.js' %}"></script>
+    </head>
+    <body class="font-poppins bg-background text-text">
+        <section class="container py-8 mb-12 space-y-8">
+            <h1 class="text-3xl">Imp & Skizz Podcast Index</h1>
+            <p>Welcome to the Imp & Skizz Podcast index. Your 1-stop shop for seeing the full range of published podcasts by ImpulseSV and SkizzleMan</p>
+        </section>
+
+        <section class="container py-8">
+            <div id="filter-results" class="space-y-12">
+                {% include 'podcasts/partials/filter_results.html' %}
+            </div>
+        </section>
+    </body>
 </html>
