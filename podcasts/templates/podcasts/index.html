@@ -8,24 +8,8 @@
 </head>
 <body>
     <h1>Podcast Index</h1>
-
-    <div>
-        <h2>Tags</h2>
-        <ul>
-            {% for tag in tags %}
-            <li>
-                <button hx-get="{% url 'filter_podcasts' %}?tag={{ tag.id }}"
-                        hx-target="#podcast-list"
-                        hx-swap="innerHTML">
-                    {{ tag.name }}
-                </button>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div id="podcast-list">
-        {% include 'podcasts/partials/podcast_list.html' %}
+    <div id="filter-results">
+        {% include 'podcasts/partials/filter_results.html' %}
     </div>
 </body>
 </html>
