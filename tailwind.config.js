@@ -14,6 +14,8 @@ module.exports = {
         'primary': '#666d8a',
         'secondary': '#46394c',
         'accent': '#755774',
+        'youtube': '#cc181e',
+        'spotify': '#1db954',
        },
     },
     container: {

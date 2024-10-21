@@ -6,44 +6,34 @@
     <ul class="flex gap-4">
         {% for tag in tags %}
             <li>
-                <button class="py-2 px-4 bg-primary"
+                <button class="bg-primary border-2 border-transparent"
                         hx-get="{% url 'filter_podcasts' %}{% build_tag_filter_url selected_tags tag.id %}"
                         hx-target="#filter-results"
                         hx-swap="innerHTML"
+                        filter-used="{% if tag in selected_tags %}true{% else %}false{% endif %}"
                         {% if tag in selected_tags or tag not in applicable_tags %} disabled class="active" {% endif %}>
                     {{ tag.name }}
                 </button>
             </li>
         {% endfor %}
+        
         <li>
-            <button class="py-2 px-4 bg-accent"
+            <button class="bg-accent border-2 border-transparent"
                     hx-get="{% url 'filter_podcasts' %}"
                     hx-target="#filter-results"
-                    hx-swap="innerHTML">
+                    hx-swap="innerHTML"
+                    {% if not selected_tags %} disabled class="active" {% endif %}>
                 Reset
             </button>
         </li>
     </ul>
 </div>
 
-
-{% if selected_tags %}
-    <div class="space-y-6">
-        <h2 class="text-2xl">Active filters</h2>
-        <ul class="flex gap-4">
-            {% for tag in selected_tags %}
-                <li>{{ tag }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endif %}
-
-
-<div id="podcast-list" class="space-y-4">
+<div id="podcast-list" class="space-y-6">
     <h2 class="text-2xl">Podcasts</h2>
-    <ul>
+    <ul class="columns-1 gap-12 space-y-12 md:columns-2">
         {% for podcast in podcasts %}
-            <li>{{ podcast.title }} - {{ podcast.release_date }}</li>
+            <li>{% include 'podcasts/partials/podcast_card.html' %}</li>
         {% empty %}
             <li>No podcasts found for these filters.</li>
         {% endfor %}

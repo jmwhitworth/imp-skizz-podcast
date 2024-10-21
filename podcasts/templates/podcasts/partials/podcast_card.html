@@ -1,0 +1,36 @@
+<div class="break-inside-avoid space-y-4">
+
+    {% if podcast.youtube_id %}
+        <img src="https://img.youtube.com/vi/{{ podcast.youtube_id }}/hqdefault.jpg" width="480" height="360" class="object-cover w-[480px] h-[270px] rounded-md" loading="lazy">
+    {% endif %}
+
+    <h3 class="text-xl">{{ podcast.title }}</h3>
+
+    <div class="flex gap-2 flex-row">
+        <a href="https://youtube.com/watch/{{ podcast.youtube_id }}" target="_blank" class="btn bg-youtube">
+            <i class="fa-brands fa-youtube"></i>
+            Youtube
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://open.spotify.com/episode/{{ podcast.spotify_id }}" target="_blank" class="btn bg-spotify">
+            <i class="fa-brands fa-spotify"></i>
+            Spotify
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+    <p class="text-text/75">Published: {{ podcast.release_date }}</p>
+
+    <ul class="space-x-2 text-text/75">
+        <span>Tags:</span>
+        {% for tag in podcast.getTags %}
+            <li class="cursor-pointer inline-block underline"
+                    hx-get="{% url 'filter_podcasts' %}?tags={{ tag.id }}"
+                    hx-target="#filter-results"
+                    hx-swap="innerHTML">
+                {{ tag }}
+            </li>
+        {% endfor %}
+    <ul>
+</div>
