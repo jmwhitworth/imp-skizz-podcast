@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Index</title>
+    <script src="https://unpkg.com/htmx.org@1.9.3"></script>
+</head>
+<body>
+    <h1>Podcast Index</h1>
+
+    <div>
+        <h2>Tags</h2>
+        <ul>
+            {% for tag in tags %}
+            <li>
+                <button hx-get="{% url 'filter_podcasts' %}?tag={{ tag.id }}"
+                        hx-target="#podcast-list"
+                        hx-swap="innerHTML">
+                    {{ tag.name }}
+                </button>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="podcast-list">
+        {% include 'podcasts/partials/podcast_list.html' %}
+    </div>
+</body>
+</html>

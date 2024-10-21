@@ -1,0 +1,7 @@
+<ul>
+    {% for podcast in podcasts %}
+        <li>{{ podcast.title }} - {{ podcast.release_date }}</li>
+            {% empty %}
+        <li>No podcasts found for this tag.</li>
+    {% endfor %}
+</ul>
