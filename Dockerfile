@@ -1,3 +1,15 @@
+# Stage 1: Use NPM to run build command
+FROM node:21 AS node-build
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+RUN npm run build
+
+# Stage 2: Use Python for running the app, and take output files from Stage 1
 FROM python:3.9-slim
 
 WORKDIR /usr/src/django-docker
@@ -12,6 +24,6 @@ RUN apt-get update && \
 RUN pip install -U pipenv && \
 	pipenv install --system
 
-COPY . .
+COPY --from=node-build /app .
 EXPOSE 8000
 ENTRYPOINT [ "sh", "./entrypoint.sh" ]
