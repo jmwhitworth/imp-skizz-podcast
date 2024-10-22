@@ -5,4 +5,4 @@ services:
       dockerfile: Dockerfile
     container_name: imp-skizz-podcast-index
     ports: 
-      - 8000:8000
+      - 80:8000
