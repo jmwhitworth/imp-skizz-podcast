@@ -9,6 +9,7 @@ djhtml = "*"
 python-dotenv = "*"
 mysqlclient = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 

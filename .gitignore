@@ -164,4 +164,8 @@ cython_debug/
 # Node / NPM
 node_modules/
 
+# Tailwind output
 static/css/output.css
+
+# Static files for Gunicorn
+staticfiles/
