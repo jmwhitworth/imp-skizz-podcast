@@ -86,7 +86,10 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT", '3306'),
         'USER': os.environ.get("DB_USER", 'root'),
         'PASSWORD': os.environ.get("DB_PASSWORD", 'root'),
-        'NAME': os.environ.get("DB_NAME", 'imp-skizz-podcast')
+        'NAME': os.environ.get("DB_NAME", 'imp-skizz-podcast'),
+        'OPTIONS': {
+            'sql_mode': 'STRICT_ALL_TABLES',
+        }
     }
 }
 
