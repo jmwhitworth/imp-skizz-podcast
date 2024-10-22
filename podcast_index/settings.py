@@ -78,18 +78,20 @@ WSGI_APPLICATION = 'podcast_index.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DB_NAME = os.getenv("DB_NAME") if os.getenv("DB_NAME") else 'imp-skizz-podcast'
+DB_USER = os.getenv("DB_USER") if os.getenv("DB_USER") else 'root'
+DB_PASSWORD = os.getenv("DB_PASSWORD") if os.getenv("DB_PASSWORD") else 'root'
+DB_HOST = os.getenv("DB_HOST") if os.getenv("DB_HOST") else 'mysql'
+DB_PORT = os.getenv("DB_PORT") if os.getenv("DB_PORT") else '3306'
+
 DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-    #}
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
-        'HOST': os.getenv("DB_HOST"),
-        'PORT': os.getenv("DB_PORT"),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT
     }
 }
 

@@ -5,9 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-psycopg2-binary = "*"
 djhtml = "*"
 python-dotenv = "*"
+mysqlclient = "*"
+gunicorn = "*"
 
 [dev-packages]
 
