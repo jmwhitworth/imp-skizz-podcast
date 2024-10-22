@@ -29,7 +29,10 @@ SECRET_KEY = 'django-insecure-8md&2hgr-l4317wl#xfnd(7tot9h@xra+gg7#!q$l(g53-gwy!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'impandskizzpodcast.com',
+    'staging.impandskizzpodcast.com'
+]
 
 
 # Application definition
