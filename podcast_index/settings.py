@@ -31,10 +31,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'impandskizzpodcast.com',
+    '.impandskizzpodcast.com',
+]
+CSRF_TRUSTED_ORIGINS = [
     'https://impandskizzpodcast.com',
-    'staging.impandskizzpodcast.com',
-    'https://staging.impandskizzpodcast.com'
+    'https://staging.impandskizzpodcast.com',
 ]
 
 
