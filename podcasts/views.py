@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.db.models import Count, Q
 from .models import Podcast, Tag
 
 class PodcastViews:
