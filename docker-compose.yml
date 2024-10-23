@@ -1,8 +1,0 @@
-services:
-  django:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: imp-skizz-podcast-index
-    ports: 
-      - 80:8000

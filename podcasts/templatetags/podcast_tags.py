@@ -1,21 +1,16 @@
 from django import template
-from urllib.parse import urlencode
 
 register = template.Library()
 
 @register.simple_tag
-def build_tag_filter_url(selected_tags, new_tag_id):
+def build_tag_filter_url(tag_id:int, selected_tags:list=[]) -> str:
     """
-    Builds a URL query string for selected tags and the new tag to be added.
+        Builds a URL query string for the given tag, plus the currently selected tags.
     """
-    # Convert the list of selected tags to a comma-separated string
-    selected_tag_ids = ','.join(map(str, [tag.id for tag in selected_tags]))
+    tag_ids = [str(tag.id) for tag in selected_tags]
+    tag_ids.append(str(tag_id))
     
-    # Append the new tag ID to the selected tags
-    if selected_tag_ids:
-        tag_string = f"{selected_tag_ids},{new_tag_id}"
-    else:
-        tag_string = str(new_tag_id)
+    # Convert the unique list of tags IDs to a comma-separated string
+    tag_ids_string = ','.join(set(tag_ids))
     
-    # Return the URL with the updated query string
-    return f"?tags={tag_string}"
+    return f"?tags={tag_ids_string}"

@@ -3,30 +3,31 @@
 <!-- Updated Tag Cloud -->
 <div id="tag-cloud" class="space-y-6">
     <h2 class="text-2xl">Filters</h2>
-    <ul class="flex gap-4">
+
+    <ul class="flex flex-wrap gap-4">
         {% for tag in tags %}
             <li>
                 <button class="bg-primary border-2 border-transparent"
-                        hx-get="{% url 'filter_podcasts' %}{% build_tag_filter_url selected_tags tag.id %}"
+                        hx-get="{% url 'filter_podcasts' %}{% build_tag_filter_url tag.id selected_tags %}"
                         hx-target="#filter-results"
                         hx-swap="innerHTML"
+                        hx-indicator="#loader"
                         filter-used="{% if tag in selected_tags %}true{% else %}false{% endif %}"
                         {% if tag in selected_tags or tag not in applicable_tags %} disabled class="active" {% endif %}>
                     {{ tag.name }}
                 </button>
             </li>
         {% endfor %}
-
-        <li>
-            <button class="bg-accent border-2 border-transparent"
-                    hx-get="{% url 'filter_podcasts' %}"
-                    hx-target="#filter-results"
-                    hx-swap="innerHTML"
-                    {% if not selected_tags %} disabled class="active" {% endif %}>
-                Reset
-            </button>
-        </li>
     </ul>
+
+    <button class="bg-accent border-2 border-transparent"
+            hx-get="{% url 'filter_podcasts' %}"
+            hx-target="#filter-results"
+            hx-swap="innerHTML"
+            hx-indicator="#loader"
+            {% if not selected_tags %} disabled class="active" {% endif %}>
+        Reset
+    </button>
 </div>
 
 <div id="podcast-list" class="space-y-6">

@@ -19,8 +19,8 @@
         <link href="{% static 'fontawesome/css/solid.css' %}" rel="stylesheet" />
         <script src="{% static 'js/htmx.2.0.1.js' %}"></script>
     </head>
-    <body class="font-poppins bg-background text-text">
-        <section class="py-12">
+    <body class="font-poppins bg-background text-text space-y-12">
+        <header class="py-20">
             <div class="container space-y-8">
                 <div class="flex gap-2 justify-start items-center">
                     <img src="{% static 'images/imp-skizz-podcast-logo-medium.webp' %}" width="64" height="64">
@@ -28,12 +28,12 @@
                 </div>
                 <p>Welcome to the Imp & Skizz Podcast index. Your 1-stop shop for seeing the full range of published podcasts by ImpulseSV and SkizzleMan</p>
             </div>
-        </section>
+        </header>
 
-        <section class="py-12 bg-primary">
+        <section class="py-20 bg-primary">
             <div class="container text-center">
-                <h2>Stream the Imp & Skizz Podcast on...</h2>
-                <div class="mt-4 flex gap-2 justify-center flex-row">
+                <h2 class="text-2xl">Stream the Imp & Skizz Podcast on...</h2>
+                <div class="mt-4 flex gap-2 justify-center flex-col sm:flex-row">
                     <a href="https://www.youtube.com/@impandskizzpodcast" target="_blank" class="btn bg-youtube">
                         <i class="fa-brands fa-youtube"></i>
                         Youtube
@@ -55,10 +55,19 @@
             </div>
         </section>
 
-        <section class="py-12">
+        <section class="py-20 relative">
+            <div id="loader" class="htmx-indicator pointer-events-none absolute w-full h-full bg-gradient-to-t from-black/50 from-90% to-transparent pt-8 text-center text-9xl text-text/75">
+                <i class="fa-solid fa-spinner animate-spin"></i>
+            </div>
             <div id="filter-results" class="container space-y-12">
                 {% include 'podcasts/partials/filter_results.html' %}
             </div>
         </section>
+
+        <footer class="py-20 bg-primary/50">
+            <div class="container">
+                <p>Some kind of disclaimer here</p>
+            </div>
+        </footer>
     </body>
 </html>
