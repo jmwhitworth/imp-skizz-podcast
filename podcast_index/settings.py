@@ -30,6 +30,7 @@ SECRET_KEY = 'django-insecure-8md&2hgr-l4317wl#xfnd(7tot9h@xra+gg7#!q$l(g53-gwy!
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'impandskizzpodcast.com',
     'staging.impandskizzpodcast.com'
 ]

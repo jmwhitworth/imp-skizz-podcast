@@ -15,8 +15,8 @@
         </a>
         {% endif %}
 
-        {% if podcast.spotify_id %}
-        <a href="https://open.spotify.com/episode/{{ podcast.spotify_id }}" target="_blank" class="btn bg-spotify text-sm">
+        {% if podcast.spotify_url %}
+        <a href="{{ podcast.spotify_url }}" target="_blank" class="btn bg-spotify text-sm">
             <i class="fa-brands fa-spotify"></i>
             Spotify
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
