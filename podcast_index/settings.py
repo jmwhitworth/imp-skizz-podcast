@@ -32,7 +32,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'impandskizzpodcast.com',
-    'staging.impandskizzpodcast.com'
+    'https://impandskizzpodcast.com',
+    'staging.impandskizzpodcast.com',
+    'https://staging.impandskizzpodcast.com'
 ]
 
 
