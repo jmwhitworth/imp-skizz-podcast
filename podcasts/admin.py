@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Tag, Podcast
 
-
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     pass

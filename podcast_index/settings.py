@@ -10,11 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
-from dotenv import load_dotenv
 import os
+from urllib.parse import urlparse
+from pathlib import Path
 
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8md&2hgr-l4317wl#xfnd(7tot9h@xra+gg7#!q$l(g53-gwy!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG_PROPAGATE_EXCEPTIONS = (
+    os.environ.get("DEBUG_PROPAGATE_EXCEPTIONS", "False") == "True"
+)
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -85,15 +87,15 @@ WSGI_APPLICATION = 'podcast_index.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+db = urlparse(os.environ.get("DATABASE_URL"))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': os.environ.get("DB_HOST", 'mysql'),
-        'PORT': os.environ.get("DB_PORT", '3306'),
-        'USER': os.environ.get("DB_USER", 'root'),
-        'PASSWORD': os.environ.get("DB_PASSWORD", 'root'),
-        'NAME': os.environ.get("DB_NAME", 'imp-skizz-podcast'),
+        "NAME": db.path.strip("/"),
+        "USER": db.username,
+        "PASSWORD": db.password,
+        "HOST": db.hostname,
+        "PORT": db.port,
         'OPTIONS': {
             'sql_mode': 'STRICT_ALL_TABLES',
         }

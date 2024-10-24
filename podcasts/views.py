@@ -5,7 +5,6 @@ class PodcastViews:
     def index(request):
         return render(request, 'podcasts/index.html', PodcastViews._context())
     
-    
     def filter_podcasts(request):
         """
             Uses the 'tags' and renders only the Podcasts with the given Tag IDs
@@ -30,7 +29,7 @@ class PodcastViews:
         context['selected_tags'] = selected_tags
         return render(request, 'podcasts/partials/filter_results.html', context)
     
-    
+    @staticmethod
     def _context(podcasts=None, tags=None) -> dict:
         """Provides the default context dictionary to be passed to the page render.
         If no Podcasts or Tags are provided, all are queries from the database and used.

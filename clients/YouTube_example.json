@@ -1,0 +1,1712 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "2J9YELuaOnnq08WFJVCkaslkfGY",
+    "nextPageToken": "CDIQAA",
+    "regionCode": "GB",
+    "pageInfo": {
+        "totalResults": 139,
+        "resultsPerPage": 50
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "SANBiYYSrBmqE-GSGnKdvlFocFU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "S-0JFl-runE"
+            },
+            "snippet": {
+                "publishedAt": "2024-10-18T14:00:32Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "PearlescentMoon On The Show! | Imp And Skizz Podcast (Ep115)",
+                "description": "PearlescentMoon On The Show! | Imp And Skizz Podcast (Ep115) Check out Pearl's Socials! YouTube: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/S-0JFl-runE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/S-0JFl-runE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/S-0JFl-runE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-10-18T14:00:32Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "f1mxOlmvtv1xtNm7PxMaJCMlNI8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "PGi1DRwBxOA"
+            },
+            "snippet": {
+                "publishedAt": "2024-10-11T14:00:31Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Talking With The Spawn Chunks Podcast! | Imp And Skizz Podcast (Ep114)",
+                "description": "Spending Some Time With The Spawn Chunks! Check out The Spawn Chunks Podcast: https://thespawnchunks.com/ YouTube: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/PGi1DRwBxOA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/PGi1DRwBxOA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/PGi1DRwBxOA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-10-11T14:00:31Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "DzfudRDbZ4EN2Ve_hOmVvfeA30E",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "0uq4DkWaWfQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-10-04T14:00:00Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Artists And Their Influence | Imp And Skizz Podcast (Ep113)",
+                "description": "Let's talk about some of our favorite artists and why. ▻Get Imp & Skizz Podcast Merch! - https://impandskizz.com Animated Shorts ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/0uq4DkWaWfQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/0uq4DkWaWfQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/0uq4DkWaWfQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-10-04T14:00:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PL5ELIPqtldCJF5itYcrIc0sXKY",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "LvcRlW2MBw4"
+            },
+            "snippet": {
+                "publishedAt": "2024-09-27T14:00:30Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "TwitchCon Recap | Imp And Skizz Podcast (Ep112)",
+                "description": "We get together with a group of our friends at the VRBO we stayed in to recap our TwitchCon experience. From MCC, to the Panel, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/LvcRlW2MBw4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/LvcRlW2MBw4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/LvcRlW2MBw4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-09-27T14:00:30Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "RCCIJp4oMa9sK_Eua5YtNr6P3Mw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_Bso8sbuIGg"
+            },
+            "snippet": {
+                "publishedAt": "2024-09-20T14:00:39Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Our Thoughts on Hermitcraft Season 10 | Imp And Skizz Podcast (Ep111)",
+                "description": "Let's talk a bit about how our Hermitcraft season has shaped up to this point. We dive into where we're at, where we thought we'd ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_Bso8sbuIGg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_Bso8sbuIGg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_Bso8sbuIGg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-09-20T14:00:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "0hH9mTyZ7JTpxfLZMedPNcjQts4",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Dacu5h6SVEA"
+            },
+            "snippet": {
+                "publishedAt": "2024-09-13T14:00:16Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Pet Ownership | Imp And Skizz Podcast (Ep110)",
+                "description": "Pet Ownership; thousands of the greatest days of your life and one of the worst. In this podcast, we discuss how the ups far far ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Dacu5h6SVEA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Dacu5h6SVEA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Dacu5h6SVEA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-09-13T14:00:16Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "fmYf5n5aCuxchn7CuDFZoTHZHvE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Pf1Y804Xebg"
+            },
+            "snippet": {
+                "publishedAt": "2024-09-06T14:00:28Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Iskall In The House! | Imp And Skizz Podcast (Ep109)",
+                "description": "There is some subtle cursing in this episode* Iskall In The House! We got Iskall to join us and learn all about him and his creative ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Pf1Y804Xebg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Pf1Y804Xebg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Pf1Y804Xebg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-09-06T14:00:28Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "fEe2slSWNnpPGIO7zpNEG0BBpss",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ug6yDDEPcro"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-30T14:00:33Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Power Of Calm | Imp And Skizz Podcast (Ep108)",
+                "description": "There is some subtle cursing in this episode, as well as some stories of injury that some viewers may find disturbing* Staying calm ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ug6yDDEPcro/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ug6yDDEPcro/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ug6yDDEPcro/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-30T14:00:33Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "vobhtXgvP_eXmhGfMN2YXrmOfcA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "nnanWgzAm1s"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-23T14:00:52Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Oh The Jobs We&#39;ve Had! | Imp And Skizz Podcast (Ep107)",
+                "description": "Oh The Jobs We've Had! *There is some cursing in this episode* Everybody has got those stories, good and bad, of the many jobs ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/nnanWgzAm1s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/nnanWgzAm1s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/nnanWgzAm1s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-23T14:00:52Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "zLawOarehTXnSiBjUfbtrWTnxIQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ZdkYmkp82LQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-16T14:00:38Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Chasing Perfection | Imp And Skizz Podcast (Ep106)",
+                "description": "Perfection is a moving target, a constantly shifting bar that can drive or inhibit us all depending on how we approach it. ▻Get Imp ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ZdkYmkp82LQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ZdkYmkp82LQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ZdkYmkp82LQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-16T14:00:38Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "1vzch31YZKRZgzPh3ybnlwufLs0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "buoxuXhzLGI"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-09T14:00:27Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "This Is My Job Now?! | Imp And Skizz Podcast (Ep105)",
+                "description": "With Skizz going into full time content creation, it's time to discuss all the different emotions that come with that decision.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/buoxuXhzLGI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/buoxuXhzLGI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/buoxuXhzLGI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-09T14:00:27Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "qzitvrfRkj-jx--cjJbz_m_Tm_g",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "GVJdb6Kx8X0"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-02T14:00:20Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "MORE ON LDSHADOWLADY! PT 2 | Imp And Skizz Podcast (Ep104)",
+                "description": "LDShadowLady joins us to share some of who she is, what her approach on content creation is, and even some fun reminiscing of ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/GVJdb6Kx8X0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/GVJdb6Kx8X0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/GVJdb6Kx8X0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-02T14:00:20Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "CKJUcNT9_dEKtdODEanYfEBb9O4",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "3kjMC7CsVwo"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-26T14:00:03Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "WHO IS LDSHADOWLADY? LET&#39;S FIND OUT! | Imp And Skizz Podcast (Ep103)",
+                "description": "LDShadowLady joins us to share some of who she is, what her approach on content creation is, and even some fun reminiscing of ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/3kjMC7CsVwo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/3kjMC7CsVwo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/3kjMC7CsVwo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-26T14:00:03Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PnsczmaW6SHqX6Hw6r4UpeBcZEA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4C3PbznRsig"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-19T14:00:03Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "A DOCTOR IN THE HOUSE! Pt 2 | Imp And Skizz Podcast (Ep102)",
+                "description": "We welcome Docm77 to the show to learn a little more about this one-of-a-kind OG. Check out Doc's links here! Youtube: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4C3PbznRsig/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4C3PbznRsig/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4C3PbznRsig/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-19T14:00:03Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "VBe7i04IG8i4ubzHvGVGr_pYQcs",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Wm4dn1-NmNw"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-12T14:00:32Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "A DOCTOR IN THE HOUSE! Pt 1 | Imp And Skizz Podcast (Ep101)",
+                "description": "We welcome Docm77 to the show to learn a little more about this one-of-a-kind OG. Check out Doc's links here! Youtube: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Wm4dn1-NmNw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Wm4dn1-NmNw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Wm4dn1-NmNw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-12T14:00:32Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "7s6OZZytVX_fIxqllTXrN2wP0BA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "6i_4U25CRFA"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-05T14:00:06Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "100th EPISODE SPECIAL!!! | Imp And Skizz Podcast (Ep100)",
+                "description": "Imp and Skizz journey back over the last 100 episodes and reflect on the good, the bad, and the really ugly. Oh, and the funniest ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6i_4U25CRFA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6i_4U25CRFA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6i_4U25CRFA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-05T14:00:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "r0uP7Ciwx2SSCc6ma1l1VQaR7Fc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "L-YtOliT1Eo"
+            },
+            "snippet": {
+                "publishedAt": "2024-06-28T14:00:13Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Welcome Back Joel (Smallishbeans) for Pt 2 | Imp And Skizz Podcast (Ep99)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue our conversation with Joel aka as Smallishbeans. How did he get that ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/L-YtOliT1Eo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/L-YtOliT1Eo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/L-YtOliT1Eo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-06-28T14:00:13Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "agcr9HX4K4vGaCunM8FcW-QPaJc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "-PED5VSxeNs"
+            },
+            "snippet": {
+                "publishedAt": "2024-06-21T14:00:00Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Here Comes Joel! AKA Smallishbeans | Imp And Skizz Podcast (Ep98)",
+                "description": "In this episode of the Imp And Skizz podcast, we invite Joel into the show! Also known as Smallishbeans. How did he get that ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/-PED5VSxeNs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/-PED5VSxeNs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/-PED5VSxeNs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-06-21T14:00:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "oGRv_eWdQLW-z3P2hd0hzqJuK_A",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "J9Cwv_QytIg"
+            },
+            "snippet": {
+                "publishedAt": "2024-06-14T14:00:12Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Failure; Our teacher? Fuel? Enemy? | Imp And Skizz Podcast (Ep97)",
+                "description": "In this episode of the Imp and Skizz podcast, we explore failure, which can, depending on your approach, act as your fuel, your ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/J9Cwv_QytIg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/J9Cwv_QytIg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/J9Cwv_QytIg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-06-14T14:00:12Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "CEPBIFr2aBgpos3cA0TVUNkOnGY",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "bVPYBw5XhAA"
+            },
+            "snippet": {
+                "publishedAt": "2024-06-07T14:00:27Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Hang With Etho Continues! Pt 2 | Imp And Skizz Podcast (Ep96)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue our hang and conversation with Etho! ▻Want to be a part of the live ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/bVPYBw5XhAA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/bVPYBw5XhAA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/bVPYBw5XhAA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-06-07T14:00:27Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "J4MjH5yuRtGSuOUtZeG3aHNr59c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kNnYSvZbuXA"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-31T14:00:40Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Oh Snappers! We Got Etho! | Imp And Skizz Podcast (Ep95)",
+                "description": "In this episode of the Imp And Skizz podcast, we are grateful to welcome in the one and only Etho! Fascinating man, fascinating ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kNnYSvZbuXA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kNnYSvZbuXA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kNnYSvZbuXA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-31T14:00:40Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "QSeNgZGujdC-7IHcMIDDq_snouA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_pvIhG9Irgs"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-24T14:00:29Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Don’t Be Like Us! | Imp And Skizz Podcast (Ep94)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue with more stories from way back in Episode 6 when we talked about ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_pvIhG9Irgs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_pvIhG9Irgs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_pvIhG9Irgs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-24T14:00:29Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "oQ4yG0AFUekv44vcXgeYzima91c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "MUmrbrc22CQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-17T14:00:18Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Our Favorite Collaborative Moments! | Imp And Skizz Podcast (Ep93)",
+                "description": "In this episode of the Imp And Skizz podcast, we take a peak over that past many years and reminisce over our favorite ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/MUmrbrc22CQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/MUmrbrc22CQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/MUmrbrc22CQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-17T14:00:18Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "pAVnQULs3RUM-hZEPdXH-lqN5LQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "qiKKf0gXMEo"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-10T14:00:42Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Welcome Jimmy Pt2! | Imp And Skizz Podcast (Ep92)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue our awesome discussion with Jimmy!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/qiKKf0gXMEo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/qiKKf0gXMEo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/qiKKf0gXMEo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-10T14:00:42Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "VXAja2nbr65hxl9QtVV1bDS2QX0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "j37N4mWNdNI"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-03T14:00:38Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Welcome Jimmy! Timmy? | Imp And Skizz Podcast (Ep91)",
+                "description": "In this episode of the Imp And Skizz podcast, we welcome SolidarityGaming, aka Jimmy, aka Timmy, aka Jimmy Jiggles, and have ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/j37N4mWNdNI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/j37N4mWNdNI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/j37N4mWNdNI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-03T14:00:38Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "gaVnqe0Q-ki4nedyV9e5GsFSYgo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "uMgMIgc3TrY"
+            },
+            "snippet": {
+                "publishedAt": "2024-04-26T14:00:42Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Pain &amp; Perspective | Imp And Skizz Podcast (Ep90)",
+                "description": "In this episode of the Imp And Skizz podcast, Skizz goes into some more detail about his daughter's injury and how it relates to the ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/uMgMIgc3TrY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/uMgMIgc3TrY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/uMgMIgc3TrY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-26T14:00:42Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "cRFQiT0Uu99v9ziOKDjdZseZIhg",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "OXH-FsI29tQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-04-19T14:00:16Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Gamers Outreach Recap! | Imp And Skizz Podcast (Ep89)",
+                "description": "In this episode of the Imp And Skizz podcast, we recap the amazing Gamers Outreach Charity event! ▻Want to be a part of the live ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/OXH-FsI29tQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/OXH-FsI29tQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/OXH-FsI29tQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-19T14:00:16Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "wmmF7l_xb3eLEHDRC0666ETSWN8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ewoURNdyIOI"
+            },
+            "snippet": {
+                "publishedAt": "2024-04-12T14:00:34Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Meet the Founder of MCC, Scott Major! PT2 | Imp And Skizz Podcast (Ep88)",
+                "description": "In this episode of the Imp And Skizz podcast, we invite Smajor to the studio! Great to learn even more about this amazing creator!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ewoURNdyIOI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ewoURNdyIOI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ewoURNdyIOI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-12T14:00:34Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "3enoAsL9wLl4lm38ir97wJUBL6E",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "y1g1_0BVT3A"
+            },
+            "snippet": {
+                "publishedAt": "2024-04-05T14:00:53Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Meet the Founder of MCC, Scott Major! | Imp And Skizz Podcast (Ep87)",
+                "description": "In this episode of the Imp And Skizz podcast, we invite Smajor to the studio! Great to learn even more about this amazing creator!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/y1g1_0BVT3A/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/y1g1_0BVT3A/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/y1g1_0BVT3A/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-05T14:00:53Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "IgdrrWdZltFuC_03JOJ2MJUwvxc",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "si-pgbEdHR0"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-29T14:00:41Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Our Favorite Things | Imp And Skizz Podcast (Ep86)",
+                "description": "In this episode of the Imp And Skizz podcast, we share what typical everyday items are our favorite. *Subtle cursing* Impulse's ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/si-pgbEdHR0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/si-pgbEdHR0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/si-pgbEdHR0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-29T14:00:41Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "ixfYO1be_JV2jHT9jj11r6LbmGI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "TTQA87QOWiA"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-22T14:00:31Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "A Day In The Life Of A Content Creator | Imp And Skizz Podcast (Ep85)",
+                "description": "In this episode of the Imp And Skizz podcast, we take you through a \"Day in the Life\" of a content creator regarding what our ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/TTQA87QOWiA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/TTQA87QOWiA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/TTQA87QOWiA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-22T14:00:31Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Vv2oa6h5NSEMIfZYNx5mUEcHMXU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "1i26E1ifTmM"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-15T14:00:02Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Rendog Story! Pt 2 | Imp And Skizz Podcast (Ep84)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue our conversation with Rendog, and what a fascinating continuance it ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/1i26E1ifTmM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/1i26E1ifTmM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/1i26E1ifTmM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-15T14:00:02Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "MV5ljmfqlPiVp1iX2722Ldogjb0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Q6p24mBfVh0"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-08T14:00:17Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Rendog Story! Pt 1 | Imp And Skizz Podcast (Ep83)",
+                "description": "In this episode of the Imp And Skizz podcast, we bring Ren Diggity Dog on and learn so much about this lovely and unique human ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Q6p24mBfVh0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Q6p24mBfVh0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Q6p24mBfVh0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-08T14:00:17Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "kxC8hgSDPQpCHiEou0kale9JTXo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "KEuuscx1VTY"
+            },
+            "snippet": {
+                "publishedAt": "2024-03-01T14:00:14Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Immersive Gaming! | Imp And Skizz Podcast (Ep82)",
+                "description": "In this episode of the Imp And Skizz podcast, we dive into Immersive Gaming. Where did it start? Where is it now? Where is it ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/KEuuscx1VTY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/KEuuscx1VTY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/KEuuscx1VTY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-03-01T14:00:14Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "iE2od6gE5izdK0fhq-EB2XOPX5s",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "20zLNsW0Mb0"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-23T14:00:03Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Just A Little Patience | Imp And Skizz Podcast (Ep81)",
+                "description": "In this episode of the Imp And Skizz podcast, we talk about Patience and how it plays a role in our decision making when it comes ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/20zLNsW0Mb0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/20zLNsW0Mb0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/20zLNsW0Mb0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-23T14:00:03Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PqCiI9yJGnKzy-7O_EGohmBjrh8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "p-_H2Q5ZFCI"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-16T14:00:41Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Obsession...Let&#39;s Unpack That! | Imp And Skizz Podcast (Ep80)",
+                "description": "In this episode of the Imp And Skizz podcast, we talk about Obsession. What is it? Is it inherently bad? Inherently good? We also ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/p-_H2Q5ZFCI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/p-_H2Q5ZFCI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/p-_H2Q5ZFCI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-16T14:00:41Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "a008u5v9i2Gvk8evx2meVgsNS6M",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "NWXOMUaiR00"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-09T14:00:13Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "HERMITCRAFT! - WE CAN FINALLY TALK ABOUT IT! | Imp And Skizz Podcast (Ep79)",
+                "description": "In this episode of the Imp And Skizz podcast, we talk about the big news of Skizz becoming one of the next members of the ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/NWXOMUaiR00/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/NWXOMUaiR00/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/NWXOMUaiR00/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-09T14:00:13Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "EUhNTMQ9gjW2-zKAcAi5ZoMpE_k",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "jcFi8BgxFcE"
+            },
+            "snippet": {
+                "publishedAt": "2024-02-02T14:00:36Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "ANGER!!! | Imp And Skizz Podcast (Ep78)",
+                "description": "In this episode of the Imp And Skizz podcast, we talk about the many different aspects of Anger. What it is, how to manage it, some ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/jcFi8BgxFcE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/jcFi8BgxFcE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/jcFi8BgxFcE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-02-02T14:00:36Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Rbaumy2Wp0Wh4yCvKRX_CayP88s",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "IFShf5EMVdk"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-26T14:00:23Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Spread Thin These Days! | Imp And Skizz Podcast (Ep77)",
+                "description": "In this episode of the Imp And Skizz podcast, we open up about what it is to over commit, how we've done it, and how we work to ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/IFShf5EMVdk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/IFShf5EMVdk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/IFShf5EMVdk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-26T14:00:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "enm5Mgt8e-W8ivSgU-o4Mf6i37Y",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "meOAWB_YFzc"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-19T14:00:38Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "What&#39;s Still Stopping You? | Imp And Skizz Podcast (Ep76)",
+                "description": "In this episode of the Imp And Skizz podcast, we revisit the \"What's Stopping You\" podcast from over a year ago and dive into what ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/meOAWB_YFzc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/meOAWB_YFzc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/meOAWB_YFzc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-19T14:00:38Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "BBrGkn4Ac2Rdle9Vr2kf6t2uLxQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "VNIBBdzMlwQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-13T14:00:31Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Hot Ones is....hot",
+                "description": "Subscribe to the Imp And Skizz Podcast channel on YouTube: @impandskizzpodcast ▻OUR LINKS! Imp And Skizz Gaming ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/VNIBBdzMlwQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/VNIBBdzMlwQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/VNIBBdzMlwQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-13T14:00:31Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "7FSlgW4Ksh2LXX2arcWyO59shGU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "KBo7GN-LO3M"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-12T14:00:21Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "BDubs&#39; Advice For Creatives PT 2 | Imp And Skizz Podcast (Ep75)",
+                "description": "In this episode of the Imp And Skizz podcast, we continue our conversation with BDubs. Learning even more about what makes ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/KBo7GN-LO3M/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/KBo7GN-LO3M/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/KBo7GN-LO3M/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-12T14:00:21Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "yCUnj4UGImYgbXjHKA3oCVU_MQ0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "RyRGau0HjDw"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-05T14:00:26Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "BDubs&#39; Advice For Creatives | Imp And Skizz Podcast (Ep74)",
+                "description": "In this episode of the Imp And Skizz podcast, we have a great session with Bdubs. Learning about his approach and balance at ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/RyRGau0HjDw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/RyRGau0HjDw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/RyRGau0HjDw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-05T14:00:26Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "A60MKMF1O3XrcqeC9H-QdPiiMHw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "SZLLPWkpxZY"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-04T14:00:18Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Dance Like No One Is Watching",
+                "description": "Subscribe to the Imp And Skizz Podcast channel on YouTube: @impandskizzpodcast ▻OUR LINKS! Imp And Skizz Gaming ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/SZLLPWkpxZY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/SZLLPWkpxZY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/SZLLPWkpxZY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-04T14:00:18Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "kueXHSJaD-ujljYUnHP_7wrzZFs",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ErQ3WTlEt1A"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-29T14:00:10Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "25 Memorable Moments From The Imp And Skizz Podcast 2023 | Imp And Skizz Podcast (Ep73)",
+                "description": "In this episode of the Imp And Skizz podcast, we revisit 25 of the most memorable moments from 2023 and look forward to many ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ErQ3WTlEt1A/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ErQ3WTlEt1A/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ErQ3WTlEt1A/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-29T14:00:10Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "rGAzQs3nQb3C3qXAatD9fRaFsWk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vEHncQ7zbJc"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-28T15:31:15Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Switching Off Toxic People",
+                "description": "Subscribe to the Imp And Skizz Podcast channel on YouTube: @impandskizzpodcast ▻OUR LINKS! Imp And Skizz Gaming ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vEHncQ7zbJc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vEHncQ7zbJc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vEHncQ7zbJc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-28T15:31:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "KvAC1mmOaA_T1JfSHdPDN5TGU84",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "6TA3mp6C8lY"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-23T14:00:05Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Comparison",
+                "description": "Subscribe to the Imp And Skizz Podcast channel on YouTube: @impandskizzpodcast ▻OUR LINKS! Imp And Skizz Gaming ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6TA3mp6C8lY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6TA3mp6C8lY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6TA3mp6C8lY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-23T14:00:05Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "PgKWM5glLIogvifrcv8nnBoIDkw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "CLyY_TIQ8l8"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-22T14:00:08Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "Secret Life Recap! | Imp And Skizz Podcast (Ep72)",
+                "description": "In this episode of the Imp And Skizz podcast, we revisit the most recent season of the Life Series; Secret Life! So much fun talking ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CLyY_TIQ8l8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CLyY_TIQ8l8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CLyY_TIQ8l8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-22T14:00:08Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "OhFaauap8VsFWJZe7OIgDtj7ZbA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "i0Smy2oq0TI"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-19T14:00:35Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "What is going on in the body shop?",
+                "description": "Subscribe to the Imp And Skizz Podcast channel on YouTube: @impandskizzpodcast ▻Watch the full episode here: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/i0Smy2oq0TI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/i0Smy2oq0TI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/i0Smy2oq0TI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-19T14:00:35Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "wRB31_kJdhCB-l79XBxn-YIsjwM",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ToPRcwayfnM"
+            },
+            "snippet": {
+                "publishedAt": "2023-12-15T14:00:27Z",
+                "channelId": "UCenRWz4J0b46-z41N-nly1A",
+                "title": "The Old &quot;What If?&quot; Question | Imp And Skizz Podcast (Ep71)",
+                "description": "In this episode of the Imp And Skizz podcast, we tamper with the age old question of \"What If?\" *This particular episode is a bit of ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ToPRcwayfnM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ToPRcwayfnM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ToPRcwayfnM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Imp And Skizz Podcast",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-12-15T14:00:27Z"
+            }
+        }
+    ]
+}

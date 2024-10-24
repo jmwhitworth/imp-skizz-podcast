@@ -7,7 +7,6 @@ class Tag(models.Model):
     def __str__(self) -> str:
         return self.name
 
-
 class Podcast(models.Model):
     title = models.CharField(max_length=255)
     episode_number = models.IntegerField(unique=True, default=0)
