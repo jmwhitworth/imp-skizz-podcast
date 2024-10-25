@@ -1,5 +1,7 @@
 SHELL=/bin/bash
 
+# https://crontab.guru/
+
 # To verify CRON is running while testing
 # * * * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./jobs/print_time.py) >> /var/log/cron.log 2>&1
 
