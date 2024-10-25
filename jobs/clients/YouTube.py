@@ -21,10 +21,11 @@ class YouTube():
         developerKey = self.DEVELOPER_KEY
     )
     
-    def recentUploads(self, pageToken:str=None) -> dict:
+    def recentUploads(self, maxResults:int=5, pageToken:str=None) -> dict:
         """Gets the recent uploads for the ImpAndSkizzPodcast channel.
         
         Args:
+            maxResults (int, optional): The number of results per query. Defaults to 5.
             pageToken (str, optional): The 'nextPageToken' to use with pagination. Defaults to None.
         """
         if self.CHANNEL_ID == "":
@@ -35,7 +36,7 @@ class YouTube():
             channelId=self.CHANNEL_ID,
             type='video',
             order='date',
-            maxResults=50,
+            maxResults=maxResults,
             pageToken=pageToken
         )
         return request.execute()

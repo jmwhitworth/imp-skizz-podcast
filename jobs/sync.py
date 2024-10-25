@@ -21,12 +21,14 @@ def queryAndSaveRecentVideos(allPages:bool = False) -> None:
     try:
         yt = YouTube()
         
-        if not allPages:
-            log(f"Fetching recent uploads...", SERVICE)
-        else:
+        if allPages:
             log(f"Fetching all uploads...", SERVICE)
+            maxResults = 50
+        else:
+            maxResults = 5
+            log(f"Fetching recent uploads...", SERVICE)
 
-        response = yt.recentUploads()
+        response = yt.recentUploads(maxResults=maxResults)
     except AttributeError as e:
         log(e, SERVICE, 'ERROR')
         return
@@ -36,7 +38,7 @@ def queryAndSaveRecentVideos(allPages:bool = False) -> None:
     # While the nextPageToken exists, keep using it to query the next page and assemble full list of videos
     if allPages:
         while 'nextPageToken' in response:
-            newResponse = yt.recentUploads(response['nextPageToken'])
+            newResponse = yt.recentUploads(maxResults=maxResults, pageToken=response['nextPageToken'])
             if 'items' in newResponse:
                 for item in newResponse['items']:
                     videos.append(item)
