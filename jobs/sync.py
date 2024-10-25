@@ -27,7 +27,7 @@ def queryAndSaveRecentVideos(allPages:bool = False) -> None:
             log(f"Fetching all uploads...", SERVICE)
 
         response = yt.recentUploads()
-    except ValueError as e:
+    except AttributeError as e:
         log(e, SERVICE, 'ERROR')
         return
     

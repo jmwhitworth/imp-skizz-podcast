@@ -1,7 +1,7 @@
 SHELL=/bin/bash
 
 # To verify CRON is running while testing
-* * * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./jobs/print_time.py) >> /var/log/cron.log 2>&1
+# * * * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./jobs/print_time.py) >> /var/log/cron.log 2>&1
 
-# Sync
-* * * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./jobs/sync.py) >> /var/log/cron.log 2>&1
+# Sync, Runs daily at 15:00
+* 15 * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./jobs/sync.py) >> /var/log/cron.log 2>&1

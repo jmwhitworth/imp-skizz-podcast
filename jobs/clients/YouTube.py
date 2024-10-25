@@ -7,9 +7,9 @@ class YouTube():
     DEVELOPER_KEY = os.environ.get("YOUTUBE_API_KEY", "")
     CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "")
     
-    def __init__(self, local:bool=True):
+    def __init__(self):
         if not bool(self.DEVELOPER_KEY):
-            raise ValueError("No YouTube API key provided")
+            raise AttributeError("No YouTube API key provided")
         
         # Disable OAuthlib's HTTPS verification when running locally.
         # *DO NOT* leave this option enabled in production.
@@ -28,7 +28,7 @@ class YouTube():
             pageToken (str, optional): The 'nextPageToken' to use with pagination. Defaults to None.
         """
         if self.CHANNEL_ID == "":
-            raise ValueError("No YouTube channel ID provided")
+            raise AttributeError("No YouTube channel ID provided")
         
         request = self.youtube.search().list(
             part='snippet',
