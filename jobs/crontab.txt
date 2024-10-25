@@ -1,0 +1,1 @@
+* * * * * /usr/local/bin/python /usr/src/django-docker/jobs/sync.py >> /var/log/cron.log 2>&1

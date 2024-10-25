@@ -1,4 +1,9 @@
 #!/bin/sh
+# Add CRON and Python locations to PATH
+PATH="$PATH:/usr/sbin"
+
+# Start CRON runner in background
+cron &
 
 # Apply database migrations
 python ./manage.py migrate --no-input
