@@ -10,6 +10,7 @@ mysqlclient = "*"
 gunicorn = "*"
 whitenoise = "*"
 google-api-python-client = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
