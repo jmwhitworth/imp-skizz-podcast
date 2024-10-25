@@ -4,11 +4,11 @@ import googleapiclient.discovery
 class YouTube():
     api_service_name = "youtube"
     api_version = "v3"
-    DEVELOPER_KEY = os.environ.get("YOUTUBE_API_KEY")
-    CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID")
+    DEVELOPER_KEY = os.environ.get("YOUTUBE_API_KEY", "")
+    CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "")
     
     def __init__(self, local:bool=True):
-        if self.DEVELOPER_KEY == "":
+        if not bool(self.DEVELOPER_KEY):
             raise ValueError("No YouTube API key provided")
         
         # Disable OAuthlib's HTTPS verification when running locally.
