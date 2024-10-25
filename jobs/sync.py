@@ -6,7 +6,7 @@ django.setup()
 
 import html
 from podcasts.models import Podcast
-from .clients.YouTube import YouTube
+from clients.YouTube import YouTube
 from datetime import datetime
 from helpers import log
 
@@ -20,7 +20,12 @@ def queryAndSaveRecentVideos(allPages:bool = False) -> None:
     """
     try:
         yt = YouTube()
-        log(f"Fetching recent uploads...", SERVICE)
+        
+        if not allPages:
+            log(f"Fetching recent uploads...", SERVICE)
+        else:
+            log(f"Fetching all uploads...", SERVICE)
+
         response = yt.recentUploads()
     except ValueError as e:
         log(e, SERVICE, 'ERROR')
@@ -57,3 +62,7 @@ def queryAndSaveRecentVideos(allPages:bool = False) -> None:
         )
     
     log("Sync complete", SERVICE)
+
+
+if __name__ == "__main__":
+    queryAndSaveRecentVideos()
