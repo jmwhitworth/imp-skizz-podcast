@@ -42,13 +42,19 @@ To fix template indentation:
 djhtml ./podcasts/templates/podcasts/**/*.html
 ```
 
-## Clients
+## Sync
 
-### YouTube
+A syncing script is set up to fetch the latest YouTube and Spotify uploads. This is ran via CRON at 15:00 daily.
 
-To get the most recent 50 uploads from YouTube API, use the following command:
-```bash
-pipenv run python clients/YouTube.py
-```
+For this to work, the following environment variables must be present:
 
-To get all of the uploads from the channel, the `YouTube.queryAndSaveRecentVideos()` method needs `True` to be passed as the first arg.
+### YouTube:
+- `YOUTUBE_API_KEY`
+- `YOUTUBE_CHANNEL_ID`
+
+### Spotify
+- `SPOTIFY_CLIENT_ID`
+- `SPOTIFY_CLIENT_SECRET`
+- `SPOTIFY_SHOW_ID`
+
+The sync runs via the `jobs/sync.py` file.

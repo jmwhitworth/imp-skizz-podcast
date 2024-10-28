@@ -20,7 +20,7 @@ class PodcastViews:
         selected_tags = Tag.objects.filter(id__in=selected_tags_ids).distinct()
         
         # Annotate podcasts with the count of matching tags and filter by the number of selected tags
-        filtered_podcasts = Podcast.withTheTags(selected_tags_ids)
+        filtered_podcasts = Podcast.withTheTags(selected_tags_ids).order_by('-episode_number')
         
         applicable_tags = Tag.objects.filter(podcasts__in=filtered_podcasts).distinct()
         
@@ -41,7 +41,7 @@ class PodcastViews:
         Returns:
             dict: The default dictionary of data for the page renderer
         """
-        p = podcasts if podcasts is not None else Podcast.objects.all()
+        p = podcasts if podcasts is not None else Podcast.objects.all().order_by('-episode_number')
         t = tags if tags is not None else Tag.objects.all()
         return {
             'podcasts': p,
