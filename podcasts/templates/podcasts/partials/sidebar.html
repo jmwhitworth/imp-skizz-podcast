@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="flex h-screen flex-col justify-between border-e">
+    <div class="px-4 py-6">
+        <span class="grid h-10 w-32 place-content-center rounded-lg text-xs">
+            Logo
+        </span>
+
+        <ul class="mt-6 space-y-1">
+            <li>
+                <a
+                    href="#"
+                    class="block rounded-lg px-4 py-2 text-sm font-medium"
+                >
+                    General
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="sticky inset-x-0 bottom-0 border-t border-primary">
+        <a href="https://jackwhitworth.com" target="_blank" class="flex items-center gap-2 p-4">
+            <img
+                alt=""
+                src="{% static 'images/jack-whitworth-headshot-150x150.webp' %}"
+                class="size-10 rounded-full object-cover"
+            />
+
+            <div>
+                <p class="text-xs">
+                    Website by
+                    <strong class="block font-medium">Jack Whitworth</strong>
+                </p>
+            </div>
+        </a>
+    </div>
+</div>

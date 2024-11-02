@@ -1,45 +1,38 @@
 {% load podcast_tags %}
 
-<div class="break-inside-avoid space-y-4">
-
+<div class="break-inside-avoid">
     {% if podcast.youtube_id %}
-        <img src="https://img.youtube.com/vi/{{ podcast.youtube_id }}/hqdefault.jpg" width="480" height="360" class="object-cover w-[480px] h-[240px] sm:h-[170px] rounded-md" loading="lazy">
+        <img
+            alt=""
+            src="https://img.youtube.com/vi/{{ podcast.youtube_id }}/hqdefault.jpg"
+            class="h-56 lg:h-72 w-full rounded-bl-3xl rounded-tr-3xl object-cover"
+            width="480" height="360"
+        />
     {% endif %}
 
-    <h3 class="text-xl">{{ podcast.title }}</h3>
 
-    <div class="flex gap-2 flex-row">
-        {% if podcast.youtube_id %}
-            <a href="https://youtube.com/watch/{{ podcast.youtube_id }}" target="_blank" class="btn bg-youtube text-sm">
-                <span class="sr-only">Open on YouTube</span><i class="fa-brands fa-youtube"></i>
-            </a>
-        {% endif %}
+    <div class="mt-4 sm:flex flex-col sm:gap-1">
+        <strong class="font-medium">{{ podcast.title }}</strong>
+        <p class="mt-0.5 opacity-50 sm:mt-0">Branding / Signage</p>
+        <div class="flex gap-2 flex-row">
+            {% if podcast.youtube_id %}
+                <a href="https://youtube.com/watch/{{ podcast.youtube_id }}" target="_blank" class="btn bg-youtube text-sm">
+                    <span class="sr-only">Open on YouTube</span><i class="fa-brands fa-youtube"></i>
+                </a>
+            {% endif %}
 
-        {% if podcast.spotify_url %}
-            <a href="{{ podcast.spotify_url }}" target="_blank" class="btn bg-spotify text-sm">
-                <span class="sr-only">Open on Spotify</span><i class="fa-brands fa-spotify"></i>
-            </a>
-        {% endif %}
+            {% if podcast.spotify_url %}
+                <a href="{{ podcast.spotify_url }}" target="_blank" class="btn bg-spotify text-sm">
+                    <span class="sr-only">Open on Spotify</span><i class="fa-brands fa-spotify"></i>
+                </a>
+            {% endif %}
 
-        {% if podcast.apple_music_url %}
-            <a href="{{ podcast.apple_music_url }}" target="_blank" class="btn bg-apple-podcasts text-sm">
-                <span class="sr-only">Open on Apple Music</span><i class="fa-brands fa-apple"></i>
-            </a>
-        {% endif %}
-    </div>
-
-    <p class="text-text/75">Published: {{ podcast.release_date }}</p>
-
-    <ul class="space-x-2 text-text/75">
-        <span>Tags:</span>
-        {% for tag in podcast.allTags %}
-            <li class="cursor-pointer inline-block underline"
-                hx-get="{% url 'filter_podcasts' %}{% build_tag_filter_url tag.id %}"
-                hx-target="#filter-results"
-                hx-swap="innerHTML"
-                hx-indicator="#loader">
-                {{ tag }}
-            </li>
-        {% endfor %}
-        <ul>
+            {% if podcast.apple_music_url %}
+                <a href="{{ podcast.apple_music_url }}" target="_blank" class="btn bg-apple-podcasts text-sm">
+                    <span class="sr-only">Open on Apple Music</span><i class="fa-brands fa-apple"></i>
+                </a>
+            {% endif %}
         </div>
+
+    </div>
+</div>

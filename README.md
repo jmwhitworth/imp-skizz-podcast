@@ -39,8 +39,9 @@ npm run build
 
 To fix template indentation:
 ```bash
-djhtml ./podcasts/templates/podcasts/**/*.html
+djhtml ./podcasts/templates/podcasts/**/*.html -t 4
 ```
+> `-t 4` Sets the indentation to 4 spaces.
 
 ## Sync
 
