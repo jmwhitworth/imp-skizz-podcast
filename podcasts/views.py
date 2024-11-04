@@ -1,30 +1,8 @@
-from django.shortcuts import render
-from .models import Podcast, Tag
+from .models import Podcast
 from django.http import JsonResponse
-from django.db.models import Count
-from django.forms.models import model_to_dict
 
 class PodcastViews:
     def api_podcasts(request):
-        """Returns a JSON response of all Podcasts in the database, including related tags"""
-        tags_name = request.GET.getlist('tags')
-        print(tags_name)
-        
-        if tags_name:
-            podcasts = Podcast.objects.filter(tags__name__in=tags_name).distinct()
-        else:
-            podcasts = Podcast.objects.all()
-        
-        podcasts_data = []
-        for podcast in podcasts:
-            podcast_data = model_to_dict(podcast)
-            podcast_data['tags'] = list(podcast.tags.values('id', 'name'))
-            podcasts_data.append(podcast_data)
-        
-        return JsonResponse(podcasts_data, safe=False)
-    
-    def api_tags(request):
-        """Returns a JSON response of all Tags in the database with the count of related podcasts"""
-        tags = Tag.objects.annotate(podcast_count=Count('podcasts'))
-        tags_data = list(tags.values('id', 'name', 'podcast_count'))
-        return JsonResponse(tags_data, safe=False)
+        """Returns a JSON response of all Podcasts in the database"""
+        podcasts = Podcast.objects.all()
+        return JsonResponse(list(podcasts.values()), safe=False)
