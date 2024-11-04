@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Podcast, Tag
 from django.http import JsonResponse
 from django.db.models import Count
+from django.forms.models import model_to_dict
 
 class PodcastViews:
     def api_podcasts(request):
@@ -16,12 +17,8 @@ class PodcastViews:
         
         podcasts_data = []
         for podcast in podcasts:
-            podcast_data = {
-                'id': podcast.id,
-                'title': podcast.title,
-                'episode_number': podcast.episode_number,
-                'tags': list(podcast.tags.values('id', 'name'))
-            }
+            podcast_data = model_to_dict(podcast)
+            podcast_data['tags'] = list(podcast.tags.values('id', 'name'))
             podcasts_data.append(podcast_data)
         
         return JsonResponse(podcasts_data, safe=False)
