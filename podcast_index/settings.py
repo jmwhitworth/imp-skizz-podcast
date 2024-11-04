@@ -38,7 +38,7 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'https://impandskizzpodcast.com',
-    'https://staging.impandskizzpodcast.com',
+    'https://api.impandskizzpodcast.com',
 ]
 
 
