@@ -7,6 +7,8 @@ class Podcast(models.Model):
     spotify_url = models.CharField(max_length=255, blank=True, null=True)
     apple_music_url = models.CharField(max_length=255, blank=True, null=True)
     release_date = models.DateField()
+    preview_url = models.CharField(max_length=255, blank=True, null=True)
+    duration = models.IntegerField(default=0)
     
     def __str__(self) -> str:
         return self.title

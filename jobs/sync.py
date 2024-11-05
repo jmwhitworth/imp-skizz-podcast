@@ -93,6 +93,8 @@ def syncSpotify(allPages:bool = False) -> None:
                     release_date__range=(start_date, end_date)
                 ).first()
                 thisPodcast.spotify_url = f"https://open.spotify.com/episode/{episode['id']}"
+                thisPodcast.preview_url = episode['audio_preview_url']
+                thisPodcast.duration = episode['duration_ms']
                 thisPodcast.save()
                 log(f"Updated {thisPodcast.episode_number}'s Spotify URL", SERVICE)
             except (Podcast.DoesNotExist, AttributeError):
