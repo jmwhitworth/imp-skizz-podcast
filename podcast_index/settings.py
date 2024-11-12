@@ -32,14 +32,17 @@ DEBUG_PROPAGATE_EXCEPTIONS = (
 )
 
 ALLOWED_HOSTS = [
+    'localhost',
     '127.0.0.1',
     '.impandskizzpodcast.com',
 ]
-CSRF_TRUSTED_ORIGINS = [
+ORIGINS = [
     'http://localhost:3000',
     'https://impandskizzpodcast.com',
     'https://api.impandskizzpodcast.com',
 ]
+CSRF_TRUSTED_ORIGINS = ORIGINS
+CORS_ALLOWED_ORIGINS = ORIGINS
 
 
 # Application definition
@@ -51,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'podcasts',
 ]
 
@@ -62,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static assets
 ]
 
