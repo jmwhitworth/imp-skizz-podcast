@@ -31,11 +31,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = (
     os.environ.get("DEBUG_PROPAGATE_EXCEPTIONS", "False") == "True"
 )
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    '.impandskizzpodcast.com',
-]
+ALLOWED_HOSTS = ['*']
 ORIGINS = [
     'http://localhost:3000',
     'https://impandskizzpodcast.com',
