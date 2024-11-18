@@ -1,3 +1,9 @@
+# Imp & Skizz Podcast Index
+
+This is the backend portion of the following project: [impandskizzpodcast.com](https://impandskizzpodcast.com/)
+
+You can see the NUXT frontend here: [https://github.com/jmwhitworth/imp-skizz-podcast-frontend](https://github.com/jmwhitworth/imp-skizz-podcast-frontend)
+
 
 # Installation
 
