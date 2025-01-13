@@ -22,32 +22,6 @@ pipenv shell
 python manage.js runserver
 ```
 
-## Node
-
-To install, use NPM:
-```bash
-npm install
-```
-
-> Node version `21` required.
-
-To watch for changes:
-```bash
-npm run start
-```
-
-To build for production:
-```bash
-npm run build
-```
-
-## Others
-
-To fix template indentation:
-```bash
-djhtml ./podcasts/templates/podcasts/**/*.html
-```
-
 ## Sync
 
 A syncing script is set up to fetch the latest YouTube and Spotify uploads. This is ran via CRON at 15:00 daily.
