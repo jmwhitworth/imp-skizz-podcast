@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 WORKDIR /usr/src/django-docker
 
@@ -12,7 +12,7 @@ RUN apt-get update && \
 RUN pip install -U pipenv && \
 	pipenv install --system
 
-COPY jobs/crontab.txt /etc/cron.d/django_jobs
+COPY crontab.txt /etc/cron.d/django_jobs
 RUN chmod 0644 /etc/cron.d/django_jobs && \
     crontab /etc/cron.d/django_jobs
 

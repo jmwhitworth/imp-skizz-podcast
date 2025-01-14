@@ -1,0 +1,14 @@
+SHELL=/bin/bash
+
+# https://crontab.guru/
+
+# To verify CRON is running while testing
+# * * * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./manage.py time) >> /var/log/cron.log 2>&1
+
+# Sync Youtube at 04:00 & Spotify at 04:05
+0 4 * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./manage.py sync youtube) >> /var/log/cron.log 2>&1
+5 4 * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./manage.py sync spotify) >> /var/log/cron.log 2>&1
+
+# Sync Youtube at 16:00 & Spotify at 16:05
+0 16 * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./manage.py sync youtube) >> /var/log/cron.log 2>&1
+5 16 * * * (export PATH="/usr/local/bin:$PATH" && cd /usr/src/django-docker && python ./manage.py sync spotify) >> /var/log/cron.log 2>&1

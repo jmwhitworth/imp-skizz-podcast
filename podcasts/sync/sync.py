@@ -1,15 +1,9 @@
-# Load django within this script when ran directly: https://stackoverflow.com/a/31444231
-import sys, os, django
-sys.path.insert(0, os.getcwd())
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "podcast_index.settings")
-django.setup()
-
-import html, json, time
+import os, html
 from podcasts.models import Podcast
-from clients.YouTube import YouTube
-from clients.Spotify import Spotify
+from podcasts.sync.clients.YouTube import YouTube
+from podcasts.sync.clients.Spotify import Spotify
+from podcasts.sync.helpers import log
 from datetime import datetime, timedelta
-from helpers import log
 
 
 def syncYouTube(allPages:bool = False) -> None:

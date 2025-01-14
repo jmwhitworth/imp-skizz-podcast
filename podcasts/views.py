@@ -1,13 +1,9 @@
-from .models import Podcast
 from django.http import JsonResponse
 from django.utils.html import escape
+from podcasts.models import Podcast
+from podcasts.helpers import get_day_suffix
 from datetime import timedelta
 
-def get_day_suffix(day):
-    """Returns the suffix for a given day of the month."""
-    if 11 <= day <= 13:
-        return 'th'
-    return {1: 'st', 2: 'nd', 3: 'rd'}.get(day % 10, 'th')
 
 class PodcastView:
     @staticmethod
@@ -59,7 +55,7 @@ class PodcastView:
         if request.GET.get('page'):
             page = int(escape(request.GET.get('page')))
             if page > 1:
-                limit = limit * page
+                limit *= page
         
         # Sort the results
         sort = '-episode_number'
@@ -92,13 +88,14 @@ class PodcastView:
             
             # Format the duration
             hours, remainder = divmod(duration_ms // 1000, 3600)
+        
         # Strip out fields that are not needed
         fields_to_remove = {'id', 'release_date', 'duration'}
         podcast_list = [
             {key: value for key, value in podcast.items() if key not in fields_to_remove}
             for podcast in podcast_list
         ]
-
+        
         return JsonResponse({
             "total_results": podcasts.count(),
             "more_results": podcasts.count() > limit,
