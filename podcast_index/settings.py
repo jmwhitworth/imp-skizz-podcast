@@ -34,6 +34,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = (
 ALLOWED_HOSTS = ['*']
 ORIGINS = [
     'http://localhost:3000',
+    'http://localhost',
     'https://impandskizzpodcast.com',
     'https://api.impandskizzpodcast.com',
 ]
