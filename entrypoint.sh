@@ -19,4 +19,4 @@ python ./manage.py migrate --no-input
 python ./manage.py collectstatic --no-input
 
 # Start Gunicorn server
-exec gunicorn podcast_index.wsgi:application --bind 0.0.0.0:8000
+exec gunicorn podcast_index.wsgi:application --bind 127.0.0.1:8000
