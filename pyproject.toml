@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "imp_skizz_podcast"
+version = "0.1.0"
+description = ""
+authors = ["Jack <jack@jackwhitworth.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.2.3"
+django-cors-headers = "^4.7.0"
+gunicorn = "^23.0.0"
+google-api-python-client = "^2.174.0"
+mysqlclient = "^2.2.7"
+requests = "^2.32.4"
+whitenoise = "^6.9.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+djhtml = "^3.0.8"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
