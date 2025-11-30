@@ -1,6 +1,9 @@
-from django.core.management.base import BaseCommand
 from datetime import datetime
+
+from django.core.management.base import BaseCommand
+
 from podcasts.sync.helpers import log
+
 
 class Command(BaseCommand):
     help = "Shows the current time. Used for showing CRON is running."

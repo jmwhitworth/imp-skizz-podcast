@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Podcast(models.Model):
     title = models.CharField(max_length=255)
     episode_number = models.IntegerField(unique=True, default=0)
@@ -9,6 +10,6 @@ class Podcast(models.Model):
     release_date = models.DateField()
     preview_url = models.CharField(max_length=255, blank=True, null=True)
     duration = models.IntegerField(default=0)
-    
+
     def __str__(self) -> str:
         return self.title
