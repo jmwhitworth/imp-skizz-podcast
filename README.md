@@ -5,34 +5,17 @@ This is the backend portion of the following project: [impandskizzpodcast.com](h
 You can see the NUXT frontend here: [https://github.com/jmwhitworth/imp-skizz-podcast-frontend](https://github.com/jmwhitworth/imp-skizz-podcast-frontend)
 
 
-# Installation
-
-## Python
-
-To install, use `pipenv`:
-```bash
-pipenv install
-```
-
-To then run the project locally:
-```bash
-# To use the installed Python environment
-pipenv shell
-
-python manage.js runserver
-```
-
-## Sync
+# Sync
 
 A syncing script is set up to fetch the latest YouTube and Spotify uploads. This is ran via CRON at 15:00 daily.
 
 For this to work, the following environment variables must be present:
 
-### YouTube:
+## YouTube:
 - `YOUTUBE_API_KEY`
 - `YOUTUBE_CHANNEL_ID`
 
-### Spotify
+## Spotify
 - `SPOTIFY_CLIENT_ID`
 - `SPOTIFY_CLIENT_SECRET`
 - `SPOTIFY_SHOW_ID`

@@ -24,8 +24,7 @@ RUN touch README.md
 
 RUN poetry install --without dev --no-root && rm -rf $POETRY_CACHE_DIR
 
-
-# Runtime stage
+# Final runtime stage
 FROM python:3.13-slim AS runtime
 
 # Install runtime dependencies for mysqlclient
@@ -45,5 +44,3 @@ COPY . .
 RUN python manage.py collectstatic --noinput --clear
 
 EXPOSE 8000
-
-ENTRYPOINT [ "sh", "entrypoint.sh" ]

@@ -58,17 +58,12 @@ class PodcastView:
     def v2_get_podcasts(request):
         """Returns a JSON response of all Podcasts in the database"""
 
-        # Limit the number of results returned
-        limit = 15
-        if request.GET.get("limit"):
-            limit = int(escape(request.GET.get("limit")))
+        limit = max(1, min(int(escape(request.GET.get("limit", 15))), 100))
 
         # Paginate the results
-        page = 1
-        if request.GET.get("page"):
-            page = int(escape(request.GET.get("page")))
-            if page > 1:
-                limit *= page
+        page = max(1, int(escape(request.GET.get("page", 1))))
+        if page > 1:
+            limit *= page
 
         # Sort the results
         sort = "-episode_number"
@@ -80,7 +75,7 @@ class PodcastView:
             search = str(escape(request.GET.get("search")))
             podcasts = Podcast.objects.filter(title__icontains=search).order_by(sort)
         else:
-            podcasts = Podcast.objects.order_by(sort)
+            podcasts = Podcast.objects.all().order_by(sort)
 
         # Trim the results to the limit and convert to a list
         podcast_list = list(podcasts[:limit].values())
@@ -126,11 +121,12 @@ class PodcastView:
             }
             for podcast in podcast_list
         ]
+        podast_count = podcasts.count()
 
         return JsonResponse(
             {
-                "total_results": podcasts.count(),
-                "more_results": podcasts.count() > limit,
+                "total_results": podast_count,
+                "more_results": podast_count > limit,
                 "podcasts": podcast_list,
             },
             safe=False,
