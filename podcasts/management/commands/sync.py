@@ -30,4 +30,4 @@ class Command(BaseCommand):
             case "spotify":
                 from podcasts.sync.sync import syncSpotify
 
-                syncSpotify()
+                syncSpotify(allPages=options["all_pages"])
