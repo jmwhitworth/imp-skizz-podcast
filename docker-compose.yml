@@ -16,6 +16,7 @@ services:
         python ./manage.py migrate --no-input
         exec gunicorn podcast_index.wsgi --bind 0.0.0.0:8000 --access-logfile -
       "
+    restart: always
 
 networks:
   dokploy-network:
