@@ -6,6 +6,11 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("platform", nargs="+", type=str)
+        parser.add_argument(
+            "--all-pages",
+            action="store_true",
+            help="Whether to sync all pages of results (YouTube only).",
+        )
 
     def handle(self, *args, **options):
         valid_platforms = ["youtube", "spotify"]
@@ -21,7 +26,7 @@ class Command(BaseCommand):
             case "youtube":
                 from podcasts.sync.sync import syncYouTube
 
-                syncYouTube()
+                syncYouTube(allPages=options["all_pages"])
             case "spotify":
                 from podcasts.sync.sync import syncSpotify
 
