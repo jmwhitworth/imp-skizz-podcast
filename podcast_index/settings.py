@@ -11,9 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-from urllib.parse import urlparse
 from pathlib import Path
-
+from urllib.parse import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "podcasts",
+    "import_export",
 ]
 
 MIDDLEWARE = [
@@ -93,15 +93,12 @@ WSGI_APPLICATION = "podcast_index.wsgi.application"
 db = urlparse(os.environ.get("DATABASE_URL"))
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": str(db.path).strip("/"),
         "USER": db.username,
         "PASSWORD": db.password,
         "HOST": db.hostname,
         "PORT": db.port,
-        "OPTIONS": {
-            "sql_mode": "STRICT_ALL_TABLES",
-        },
     }
 }
 
