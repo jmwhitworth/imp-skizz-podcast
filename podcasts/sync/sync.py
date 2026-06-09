@@ -1,5 +1,6 @@
 import html
 import os
+import re
 from datetime import datetime, timedelta
 
 from podcasts.models import Podcast
@@ -41,10 +42,12 @@ def syncYouTube(allPages: bool = False) -> None:
 
     log(f"Found {len(videos)} videos", SERVICE)
 
+    videos.sort(key=lambda v: v["snippet"]["publishedAt"])
+
     for video in videos:
         # Parse the video information for storing in the database
         raw_title = html.unescape(str(video["snippet"]["title"]))
-        id = video["id"]["videoId"]
+        id = video["snippet"]["resourceId"]["videoId"]
         dt = datetime.strptime(video["snippet"]["publishedAt"], "%Y-%m-%dT%H:%M:%SZ")
 
         try:
@@ -53,17 +56,24 @@ def syncYouTube(allPages: bool = False) -> None:
             log(f"Unable to parse title {raw_title}", SERVICE, "ERROR")
             continue
 
-        # TODO: Need a better system for this now that there's seasons
+        season1_match = re.search(r"\(Ep(\d+)\)", raw_title)
+        seasonal_match = re.search(r"\(S\d+Ep\d+\)", raw_title)
+
+        if not season1_match and not seasonal_match:
+            log(f"Skipping non-episode video: {raw_title}", SERVICE)
+            continue
+
         episode = Podcast.objects.filter(title=title).first()
         if episode:
             episode_number = episode.episode_number
-
+        elif season1_match:
+            episode_number = int(season1_match.group(1))
         else:
             try:
                 episode_number = (
                     Podcast.objects.order_by("episode_number").last().episode_number + 1
                 )
-            except:
+            except AttributeError:
                 log(f"Unable to parse episode number {raw_title}", SERVICE, "ERROR")
                 continue
 

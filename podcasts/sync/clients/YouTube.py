@@ -1,5 +1,4 @@
 import os
-from datetime import datetime, timedelta
 
 import googleapiclient.discovery
 
@@ -34,15 +33,14 @@ class YouTube:
         if self.CHANNEL_ID == "":
             raise AttributeError("No YouTube channel ID provided")
 
-        last_month = datetime.now() - timedelta(days=30)
+        # Uploads playlist ID is the channel ID with 'UC' replaced by 'UU'.
+        # Using playlistItems.list avoids the OAuth requirement of search.list.
+        uploads_playlist_id = "UU" + self.CHANNEL_ID[2:]
 
-        request = self.youtube.search().list(
+        request = self.youtube.playlistItems().list(
             part="snippet",
-            channelId=self.CHANNEL_ID,
-            type="video",
-            order="date",
+            playlistId=uploads_playlist_id,
             maxResults=maxResults,
-            publishedAfter=last_month.strftime("%Y-%m-%dT%H:%M:%SZ"),
             pageToken=pageToken,
         )
         return request.execute()
