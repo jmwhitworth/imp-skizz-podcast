@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: on-failure
     container_name: imp_skizz_backend
     # Commented out as Dokploy uses traefik for routing
     #ports:
@@ -14,9 +15,8 @@ services:
     command: >
       sh -c "
         python ./manage.py migrate --no-input
-        exec gunicorn podcast_index.wsgi --bind 0.0.0.0:8000 --access-logfile -
+        exec gunicorn podcast_index.wsgi --bind 0.0.0.0:8000 --access-logfile - --max-requests 1000 --max-requests-jitter 50
       "
-    restart: always
 
 networks:
   dokploy-network:
