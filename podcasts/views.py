@@ -70,12 +70,12 @@ class PodcastView:
         if str(escape(request.GET.get("sort"))) == "asc":
             sort = "episode_number"
 
+        podcasts = Podcast.objects.not_archived().order_by(sort)
+
         # Search by title
         if request.GET.get("search"):
             search = str(escape(request.GET.get("search")))
-            podcasts = Podcast.objects.filter(title__icontains=search).order_by(sort)
-        else:
-            podcasts = Podcast.objects.all().order_by(sort)
+            podcasts = podcasts.filter(title__icontains=search)
 
         # Trim the results to the limit and convert to a list
         podcast_list = list(podcasts[:limit].values())

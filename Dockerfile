@@ -1,18 +1,17 @@
+# Python build stage for dependencies via uv
 FROM python:3.13-slim AS pythonbuilder
 
-RUN pip install poetry
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-ENV POETRY_NO_INTERACTION=1 \
-    POETRY_VIRTUALENVS_IN_PROJECT=1 \
-    POETRY_VIRTUALENVS_CREATE=1 \
-    POETRY_CACHE_DIR=/tmp/poetry_cache
+ENV UV_NO_INTERACTION=1 \
+    UV_PROJECT_ENVIRONMENT=/app/.venv \
+    UV_CACHE_DIR=/tmp/uv_cache
 
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock ./
-RUN touch README.md
+COPY pyproject.toml uv.lock README.md ./
 
-RUN poetry install --without dev --no-root && rm -rf $POETRY_CACHE_DIR
+RUN uv sync --locked --no-install-project --no-dev && rm -rf $UV_CACHE_DIR
 
 # Final runtime stage
 FROM python:3.13-slim AS runtime
@@ -26,6 +25,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN python manage.py collectstatic --noinput --clear
+COPY --from=nodebuilder /app/src_compiled ./src_compiled
 
 EXPOSE 8000
