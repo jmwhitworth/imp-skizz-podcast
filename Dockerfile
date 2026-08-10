@@ -25,6 +25,4 @@ WORKDIR /app
 
 COPY . .
 
-COPY --from=nodebuilder /app/src_compiled ./src_compiled
-
 EXPOSE 8000
