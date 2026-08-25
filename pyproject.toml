@@ -1,38 +1,30 @@
 [project]
-name = "imp_skizz_podcast"
+name = "django-boilerplate"
 version = "0.1.0"
-description = ""
-authors = [{ name = "Jack", email = "jack@jackwhitworth.com" }]
-requires-python = ">=3.13,<4"
+description = "Add your description here"
 readme = "README.md"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-]
+authors = [{ name = "jmwhitworth", email = "jackmartinwhit@gmail.com" }]
+requires-python = ">=3.13"
 dependencies = [
-    "django>=5.2.3,<6",
-    "django-cors-headers>=4.7.0,<5",
-    "gunicorn>=23.0.0,<24",
-    "google-api-python-client>=2.174.0,<3",
-    "requests>=2.32.4,<3",
-    "whitenoise>=6.9.0,<7",
-    "django-import-export>=4.4.1,<5",
-    "psycopg2-binary>=2.9.12,<3",
+    "django>=6.0.8",
+    "django-cors-headers>=4.9.0",
+    "django-debug-toolbar>=7.0.0",
+    "django-tasks-db>=0.12.0",
+    "django-vite>=3.1.0",
+    "gunicorn>=26.0.0",
+    "hiredis>=3.4.0",
+    "psycopg2-binary>=2.9.12",
+    "redis>=8.1.0",
+    "whitenoise>=6.12.0",
 ]
 
 [dependency-groups]
 dev = [
-    "black>=24.10.0,<25",
-    "djhtml>=3.0.8,<4",
-    "isort>=5.13.2,<6",
-    "factory-boy>=3.3.3,<4",
+    "black>=26.5.1",
+    "coverage>=7.15.3",
+    "django-debug-toolbar>=7.0.0",
+    "django-zeal>=2.2.2",
+    "djhtml>=3.0.11",
+    "factory-boy>=3.3.3",
+    "isort>=8.0.1",
 ]
-
-[tool.uv]
-package = false
-default-groups = "all"
-
-[build-system]
-requires = ["uv_build>=0.12.3,<0.13.0"]
-build-backend = "uv_build"
