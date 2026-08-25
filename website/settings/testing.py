@@ -2,6 +2,8 @@ import tempfile
 
 from .base import *
 
+ENVIRONMENT = "testing"
+
 DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
