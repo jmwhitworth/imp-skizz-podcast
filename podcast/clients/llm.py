@@ -1,3 +1,4 @@
+import base64
 import logging
 from typing import Optional
 
@@ -44,12 +45,22 @@ class LLMClient:
         self.model = model or settings.LLM_API_MODEL
         self.api_base = api_base or settings.LLM_API_BASE
 
+        if settings.LLM_API_PROXY_USER and settings.LLM_API_PROXY_PASSWORD:
+            auth_str = (
+                f"{settings.LLM_API_PROXY_USER}:{settings.LLM_API_PROXY_PASSWORD}"
+            )
+            b64_auth = base64.b64encode(auth_str.encode()).decode("utf-8")
+            self.headers = {"Authorization": f"Basic {b64_auth}"}
+        else:
+            self.headers = {}
+
     def _complete(self, prompt: str, response_model: type[BaseModel]) -> BaseModel:
         response = litellm.completion(
             model=self.model,
             messages=[{"role": "user", "content": prompt}],
             response_format=response_model,
             api_base=self.api_base,
+            extra_headers=self.headers,
         )
         raw_content = response.choices[0].message.content
         return response_model.model_validate_json(raw_content)

@@ -213,3 +213,5 @@ SPOTIFY_SHOW_ID = os.environ.get("SPOTIFY_SHOW_ID", "")
 # AI settings
 LLM_API_BASE = os.environ.get("LLM_API_BASE", "")
 LLM_API_MODEL = os.environ.get("LLM_API_MODEL", "ollama/phi4-mini")
+LLM_API_PROXY_USER = os.environ.get("LLM_API_PROXY_USER", "")
+LLM_API_PROXY_PASSWORD = os.environ.get("LLM_API_PROXY_PASSWORD", "")
