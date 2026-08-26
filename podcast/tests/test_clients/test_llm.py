@@ -1,11 +1,11 @@
 from django.test import TestCase
 
-from podcast.clients.llm import PodcastEpisodeIdentifier
+from podcast.clients.llm import LLMClient
 
 
-class PodcastEpisodeIdentifierTestCase(TestCase):
+class LLMClient__identify_episode__TestCase(TestCase):
     def setUp(self):
-        self.identifier = PodcastEpisodeIdentifier()
+        self.identifier = LLMClient()
 
     def test_identify_episode(self):
         cases = [
@@ -74,3 +74,61 @@ class PodcastEpisodeIdentifierTestCase(TestCase):
                     self.assertEqual(data.is_episode, expected["is_episode"])
                     self.assertEqual(data.season, expected["season"])
                     self.assertEqual(data.episode, expected["episode"])
+
+
+class LLMClient__rename_episode__TestCase(TestCase):
+    def setUp(self):
+        self.identifier = LLMClient()
+
+    def test_rename_episode(self):
+        cases = [
+            (
+                "Reacting To Extreme Sports | Imp And Skizz Podcast (S4Ep5)",
+                "Reacting To Extreme Sports",
+            ),
+            (
+                "Remind Yourself of What You’re Grateful For | Imp And Skizz Podcast  (S2E18).",
+                "Remind Yourself of What You’re Grateful For",
+            ),
+            (
+                "OUR FINAL EPISODE...(for now) | Imp And Skizz Podcast (Ep136)",
+                "OUR FINAL EPISODE...(for now)",
+            ),
+            (
+                "What Makes A Good Leader? | Imp And Skizz Podcast (Ep09)",
+                "What Makes A Good Leader?",
+            ),
+            (
+                "A DOCTOR IN THE HOUSE! Pt 2 | Imp And Skizz Podcast (Ep102)",
+                "A DOCTOR IN THE HOUSE! Pt 2",
+            ),
+            (
+                "ANOTHER SIDE OF ZED...KRIS! Pt - 2 | Imp And Skizz Podcast (Ep51)",
+                "ANOTHER SIDE OF ZED...KRIS! Pt - 2",
+            ),
+            (
+                "Our Thoughts on Hermitcraft Season 10 | Imp And Skizz Podcast (Ep111)",
+                "Our Thoughts on Hermitcraft Season 10",
+            ),
+            (
+                "You Asked We Answered Part 2 | Imp And Skizz Podcast (Ep14)",
+                "You Asked We Answered Part 2",
+            ),
+            (
+                "Skizz hates Minecraft",
+                "Skizz hates Minecraft",
+            ),
+            (
+                "Tornado Pt. 3",
+                "Tornado Pt. 3",
+            ),
+            (
+                "We're Back!...Soon™️",
+                "We're Back!...Soon™️",
+            ),
+        ]
+
+        for title, expected in cases:
+            with self.subTest(title=title):
+                new_title = self.identifier.rename_episode(title)
+                self.assertEqual(new_title, expected)

@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field, ValidationError
 logger = logging.getLogger(__name__)
 
 
-class EpisodeData(BaseModel):
+class EpisodeIdentityData(BaseModel):
     # The reasoning field forces Chain of Thought, preventing premature negative matching
     reasoning: str = Field(
         description="Explain step-by-step if you found an 'Ep' or 'S#' indicator, and whether you should ignore 'Part/Pt'."
@@ -26,7 +26,16 @@ class EpisodeData(BaseModel):
     )
 
 
-class PodcastEpisodeIdentifier:
+class EpisodeRenamedData(BaseModel):
+    reasoning: str = Field(
+        description="Explain step-by-step what suffix needs to be removed, or if the title should be left exactly as is."
+    )
+    new_title: str = Field(
+        description="The clean title. Everything from the '|' onward must be removed. If no '|' exists, output the original string exactly."
+    )
+
+
+class LLMClient:
     def __init__(
         self,
         model: str = settings.LLM_API_MODEL,
@@ -35,7 +44,7 @@ class PodcastEpisodeIdentifier:
         self.model = model
         self.api_base = api_base
 
-    def identify_episode(self, title: str) -> Optional[EpisodeData]:
+    def identify_episode(self, title: str) -> Optional[EpisodeIdentityData]:
         prompt = (
             f"Extract season and episode numbers from the title.\n"
             f"CRITICAL RULES:\n"
@@ -55,12 +64,12 @@ class PodcastEpisodeIdentifier:
             response = litellm.completion(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                response_format=EpisodeData,
+                response_format=EpisodeIdentityData,
                 api_base=self.api_base,
             )
 
             raw_content = response.choices[0].message.content
-            data = EpisodeData.model_validate_json(raw_content)
+            data = EpisodeIdentityData.model_validate_json(raw_content)
 
         except (ValidationError, Exception) as e:
             logger.error(f"Failed to process video '{title}': {e}")
@@ -70,3 +79,35 @@ class PodcastEpisodeIdentifier:
             return None
 
         return data
+
+    def rename_episode(self, title: str) -> str:
+        prompt = (
+            f"Clean the episode title by removing the podcast branding suffix.\n"
+            f"CRITICAL RULES:\n"
+            f"1. Find the pipe character '|'. Remove the '|' and ALL text after it (e.g., '| The Fake Podcast (S4Ep5)').\n"
+            f"2. Remove any trailing spaces after making the cut.\n"
+            f"3. If there is no '|' character in the title, you MUST return the exact original title unmodified.\n\n"
+            f"Examples:\n"
+            f"- 'The Best Gaming Moments | Fun Time Podcast (S3Ep12)' -> reasoning: 'Found pipe. Removing | and everything after.', new_title: 'The Best Gaming Moments'\n"
+            f"- 'Learning to Cook with Chef Bob | The Cooking Show  (S1E4).' -> reasoning: 'Found pipe. Removing | and everything after.', new_title: 'Learning to Cook with Chef Bob'\n"
+            f"- 'Wait, what just happened?! 🤯' -> reasoning: 'No pipe character found. Returning original.', new_title: 'Wait, what just happened?! 🤯'\n"
+            f"- 'The Big Finale Pt 2 | Drama Cast (Ep99)' -> reasoning: 'Found pipe. Removing | and everything after.', new_title: 'The Big Finale Pt 2'\n\n"
+            f"Title to rename: '{title}'"
+        )
+
+        try:
+            response = litellm.completion(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                response_format=EpisodeRenamedData,
+                api_base=self.api_base,
+            )
+
+            raw_content = response.choices[0].message.content
+            data = EpisodeRenamedData.model_validate_json(raw_content)
+
+        except (ValidationError, Exception) as e:
+            logger.error(f"Failed to rename episode '{title}': {e}")
+            return title
+
+        return data.new_title

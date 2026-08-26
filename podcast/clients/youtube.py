@@ -16,11 +16,11 @@ class RemoteVideo:
 
 
 class YoutubeClient:
-    api_service_name = "youtube"
-    api_version = "v3"
-    DEVELOPER_KEY = settings.YOUTUBE_API_KEY
-    CHANNEL_ID = settings.YOUTUBE_CHANNEL_ID
-    PLAYLIST_ID = "UU" + CHANNEL_ID[2:]
+    API_SERVICE_NAME: str = "youtube"
+    API_VERSION: str = "v3"
+    DEVELOPER_KEY: str = settings.YOUTUBE_API_KEY
+    CHANNEL_ID: str = settings.YOUTUBE_CHANNEL_ID
+    PLAYLIST_ID: str = "UU" + CHANNEL_ID[2:]
 
     def __init__(self):
         if not self.DEVELOPER_KEY:
@@ -35,7 +35,7 @@ class YoutubeClient:
         )
 
         self.youtube = googleapiclient.discovery.build(
-            self.api_service_name, self.api_version, developerKey=self.DEVELOPER_KEY
+            self.API_SERVICE_NAME, self.API_VERSION, developerKey=self.DEVELOPER_KEY
         )
 
     def _fetch_videos(self, max_results: int = 50, page_token: str = None) -> dict:

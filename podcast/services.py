@@ -4,43 +4,46 @@ from django.db import transaction
 
 from status.models import StatusModelMixin as Status
 
-from .clients.llm import PodcastEpisodeIdentifier
+from .clients.llm import LLMClient
 from .clients.youtube import YoutubeClient
 from .models import Podcast, YoutubeVideo
 
 logger = getLogger(__name__)
 
 
-@transaction.atomic
-def youtubevideo_import() -> int:
-    client = YoutubeClient()
+def podcast_create_from_youtubevideo(youtubevideo: YoutubeVideo) -> Podcast:
+    """Creates a podcast entry from a given YouTube video instance."""
+    data = LLMClient().identify_episode(youtubevideo.title)
+    if data is None or data.season is None or data.episode is None:
+        youtubevideo.status = Status.ARCHIVED
+        youtubevideo.save(update_fields=["status"])
+        logger.warning(
+            f"Could not identify episode for video: {youtubevideo.video_id} - {youtubevideo.title}. Marked as archived."
+        )
+        return None
 
-    items = client.fetch_recent_uploads()
-
-    if not items:
-        return 0
-
-    records = YoutubeVideo.objects.bulk_create(
-        [
-            YoutubeVideo(
-                video_id=item.id,
-                published_at=item.publishedAt,
-                title=item.title,
-                description=item.description,
-                api_data=item.api_data,
-                status=Status.PUBLISHED,
-            )
-            for item in items
-        ],
-        update_conflicts=True,
-        unique_fields=["video_id"],
-        update_fields=["title", "description", "api_data"],
+    podcast, created = Podcast.objects.get_or_create(
+        season=data.season,
+        episode=data.episode,
+        defaults={
+            "title": youtubevideo.title,
+            "release_date": youtubevideo.published_at.date(),
+            "youtube_video": youtubevideo,
+            "status": Status.PUBLISHED,
+        },
     )
+    if not created:
+        youtubevideo.status = Status.ARCHIVED
+        youtubevideo.save(update_fields=["status"])
+        logger.warning(
+            f"Podcast already exists for video: {youtubevideo.video_id} - {youtubevideo.title}. Marked as archived."
+        )
 
-    return len(records)
+    return podcast
 
 
 def podcast_create_from_youtubevideos() -> int:
+    """Creates podcast entries from YouTube videos that do not yet have associated podcasts."""
     videos = (
         YoutubeVideo.objects.filter(podcasts__isnull=True)
         .not_archived()
@@ -52,40 +55,65 @@ def podcast_create_from_youtubevideos() -> int:
 
     logger.info(f"Creating podcasts from {videos.count()} YouTube videos")
 
-    identifier = PodcastEpisodeIdentifier()
     created_count = 0
-
     for video in videos.iterator():
-        logger.info(f"Identifying episode for video: {video.video_id} - {video.title}")
-        data = identifier.identify_episode(video.title)
-        if data is None or data.season is None or data.episode is None:
-            video.status = Status.ARCHIVED
-            video.save(update_fields=["status"])
-            logger.warning(
-                f"Could not identify episode for video: {video.video_id} - {video.title}. Marked as archived."
-            )
-            continue
-
-        podcast, created = Podcast.objects.get_or_create(
-            season=data.season,
-            episode=data.episode,
-            defaults={
-                "title": video.title,
-                "release_date": video.published_at.date(),
-                "youtube_video": video,
-                "status": Status.PUBLISHED,
-            },
-        )
-        if created:
+        podcast = podcast_create_from_youtubevideo(video)
+        if podcast:
             created_count += 1
-            logger.info(
-                f"Created podcast: {podcast.title} (Season {podcast.season}, Episode {podcast.episode}) from video: {video.video_id}"
-            )
-        else:
-            video.status = Status.ARCHIVED
-            video.save(update_fields=["status"])
-            logger.warning(
-                f"Podcast already exists for video: {video.video_id} - {video.title}. Marked as archived."
-            )
 
+    logger.info(f"Created {created_count} podcasts from YouTube videos")
     return created_count
+
+
+def podcast_update_title(podcast_id) -> bool:
+    """Updates the title of the given podcast to remove branding and episode identifiers."""
+    podcast = Podcast.objects.filter(id=podcast_id).first()
+    if not podcast:
+        return False
+
+    new_title = LLMClient().rename_episode(podcast.title)
+
+    if new_title != podcast.title:
+        podcast.title = new_title
+        podcast.save(update_fields=["title"])
+        return True
+    return False
+
+
+def youtubevideo_create_podcast(youtubevideo_id) -> Podcast:
+    """Creates a podcast entry from a given YouTube video ID."""
+    video = YoutubeVideo.objects.filter(id=youtubevideo_id).first()
+    if not video:
+        return None
+
+    return podcast_create_from_youtubevideo(video)
+
+
+def youtubevideo_import() -> int:
+    """Imports recent YouTube videos and creates corresponding podcast entries."""
+    items = YoutubeClient().fetch_recent_uploads()
+
+    if not items:
+        return 0
+
+    with transaction.atomic():
+        records = YoutubeVideo.objects.bulk_create(
+            [
+                YoutubeVideo(
+                    video_id=item.id,
+                    published_at=item.publishedAt,
+                    title=item.title,
+                    description=item.description,
+                    api_data=item.api_data,
+                    status=Status.PUBLISHED,
+                )
+                for item in items
+            ],
+            update_conflicts=True,
+            unique_fields=["video_id"],
+            update_fields=["title", "description", "api_data"],
+        )
+
+    podcast_create_from_youtubevideos()
+
+    return len(records)

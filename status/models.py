@@ -13,14 +13,6 @@ class StatusQuerySet(models.QuerySet):
         """Return only records with status not 'PUBLISHED'."""
         return self.exclude(status=StatusModelMixin.PUBLISHED)
 
-    def draft(self):
-        """Return only records with status 'DRAFT'."""
-        return self.filter(status=StatusModelMixin.DRAFT)
-
-    def not_draft(self):
-        """Return only records with status not 'DRAFT'."""
-        return self.exclude(status=StatusModelMixin.DRAFT)
-
     def archived(self):
         """Return only records with status 'ARCHIVED'."""
         return self.filter(status=StatusModelMixin.ARCHIVED)
@@ -38,12 +30,10 @@ class StatusModelMixin(models.Model):
 
     objects = StatusQuerySet.as_manager()
 
-    DRAFT = "DRAFT"
     PUBLISHED = "PUBLISHED"
     ARCHIVED = "ARCHIVED"
 
     STATUS_CHOICES = [
-        (DRAFT, _("Draft")),
         (PUBLISHED, _("Published")),
         (ARCHIVED, _("Archived")),
     ]
@@ -51,14 +41,9 @@ class StatusModelMixin(models.Model):
     status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
-        default="DRAFT",
+        default="PUBLISHED",
         verbose_name=_("Status"),
     )
-
-    @property
-    def is_draft(self) -> bool:
-        """Check if the record is in draft status."""
-        return self.status == self.DRAFT
 
     @property
     def is_published(self) -> bool:
