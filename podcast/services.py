@@ -1,12 +1,14 @@
 from logging import getLogger
+from typing import Optional
 
 from django.db import transaction
 
 from status.models import StatusModelMixin as Status
 
 from .clients.llm import LLMClient
+from .clients.spotify import SpotifyClient
 from .clients.youtube import YoutubeClient
-from .models import Podcast, YoutubeVideo
+from .models import Podcast, SpotifyEpisode, YoutubeVideo
 
 logger = getLogger(__name__)
 
@@ -117,3 +119,59 @@ def youtubevideo_import() -> int:
     podcast_create_from_youtubevideos()
 
     return len(records)
+
+
+def spotifyepisode_import() -> int:
+    """Imports recent Spotify episodes and creates corresponding podcast entries."""
+    items = SpotifyClient().fetch_all_episodes()
+
+    if not items:
+        return 0
+
+    with transaction.atomic():
+        records = SpotifyEpisode.objects.bulk_create(
+            [
+                SpotifyEpisode(
+                    episode_id=item.episode_id,
+                    release_date=item.release_date,
+                    duration_ms=item.duration_ms,
+                    href=item.href,
+                    title=item.title,
+                    description=item.description,
+                    api_data=item.api_data,
+                    status=Status.PUBLISHED,
+                )
+                for item in items
+            ],
+            update_conflicts=True,
+            unique_fields=["episode_id"],
+            update_fields=["title", "description", "api_data"],
+        )
+
+    for record in records:
+        spotifyepisode_assign_podcast(record.id)
+
+    return len(records)
+
+
+def spotifyepisode_assign_podcast(spotifyepisode_id) -> Optional[Podcast]:
+    """Assigns a Spotify episode to a podcast entry."""
+    episode = SpotifyEpisode.objects.filter(id=spotifyepisode_id).first()
+    if not episode:
+        return None
+
+    podcast = Podcast.objects.filter(release_date=episode.release_date).first()
+
+    if not podcast:
+        data = LLMClient().identify_episode(episode.title)
+        if data:
+            podcast = Podcast.objects.filter(
+                season=data.season, episode=data.episode
+            ).first()
+
+    if not podcast:
+        return None
+
+    podcast.spotify_episode = episode
+    podcast.save()
+    return podcast
