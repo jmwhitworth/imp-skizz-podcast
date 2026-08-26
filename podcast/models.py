@@ -1,10 +1,12 @@
 from django.db import models
 
 from common.models import BaseModel
-from status.models import StatusModelMixin
+from status.models import StatusModelMixin, StatusQuerySet
 
 
 class Podcast(StatusModelMixin, BaseModel):
+    objects = StatusQuerySet.as_manager()
+
     title = models.CharField(max_length=255)
     release_date = models.DateField()
 
@@ -31,7 +33,9 @@ class Podcast(StatusModelMixin, BaseModel):
         unique_together = ("season", "episode")
 
 
-class YoutubeVideo(BaseModel):
+class YoutubeVideo(StatusModelMixin, BaseModel):
+    objects = StatusQuerySet.as_manager()
+
     video_id = models.CharField(max_length=255, unique=True, db_index=True)
     published_at = models.DateTimeField()
 

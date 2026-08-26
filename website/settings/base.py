@@ -203,3 +203,8 @@ DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "")
 # Youtube settings
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 YOUTUBE_CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "")
+
+
+# AI settings
+LLM_API_BASE = os.environ.get("LLM_API_BASE", "")
+LLM_API_MODEL = os.environ.get("LLM_API_MODEL", "ollama/phi4-mini")
