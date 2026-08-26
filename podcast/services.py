@@ -123,7 +123,7 @@ def youtubevideo_import() -> int:
 
 def spotifyepisode_import() -> int:
     """Imports recent Spotify episodes and creates corresponding podcast entries."""
-    items = SpotifyClient().fetch_all_episodes()
+    items = SpotifyClient().fetch_recent_episodes()
 
     if not items:
         return 0
@@ -136,6 +136,7 @@ def spotifyepisode_import() -> int:
                     release_date=item.release_date,
                     duration_ms=item.duration_ms,
                     href=item.href,
+                    preview_url=item.preview_url,
                     title=item.title,
                     description=item.description,
                     api_data=item.api_data,
@@ -145,11 +146,12 @@ def spotifyepisode_import() -> int:
             ],
             update_conflicts=True,
             unique_fields=["episode_id"],
-            update_fields=["title", "description", "api_data"],
+            update_fields=["title", "description", "api_data", "preview_url"],
         )
 
     for record in records:
-        spotifyepisode_assign_podcast(record.id)
+        if not record.podcasts.exists():
+            spotifyepisode_assign_podcast(record.id)
 
     return len(records)
 
@@ -160,7 +162,8 @@ def spotifyepisode_assign_podcast(spotifyepisode_id) -> Optional[Podcast]:
     if not episode:
         return None
 
-    podcast = Podcast.objects.filter(release_date=episode.release_date).first()
+    candidates = Podcast.objects.filter(release_date=episode.release_date)
+    podcast = candidates.first() if candidates.count() == 1 else None
 
     if not podcast:
         data = LLMClient().identify_episode(episode.title)
@@ -173,5 +176,5 @@ def spotifyepisode_assign_podcast(spotifyepisode_id) -> Optional[Podcast]:
         return None
 
     podcast.spotify_episode = episode
-    podcast.save()
+    podcast.save(update_fields=["spotify_episode"])
     return podcast

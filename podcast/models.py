@@ -29,10 +29,7 @@ class Podcast(StatusModelMixin, BaseModel):
         related_name="podcasts",
     )
 
-    # spotify_url = models.URLField(max_length=255, blank=True, null=True)
-    # spotify_preview_url = models.URLField(max_length=255, blank=True, null=True)
-
-    # apple_music_url = models.URLField(max_length=255, blank=True, null=True)
+    # TODO: Apple music
 
     class Meta:
         verbose_name = "Podcast"

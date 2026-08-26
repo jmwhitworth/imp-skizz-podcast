@@ -18,14 +18,13 @@ class RemoteEpisode:
 
 
 class SpotifyClient:
-    SHOW_ID: str = settings.SPOTIFY_SHOW_ID
-    CLIENT_ID: str = settings.SPOTIFY_CLIENT_ID
-    CLIENT_SECRET: str = settings.SPOTIFY_CLIENT_SECRET
-    BEARER_TOKEN: str
     ENDPOINT_ACCOUNT: str = "https://accounts.spotify.com/api"
     ENDPOINT_API: str = "https://api.spotify.com/v1"
 
     def __init__(self):
+        self.SHOW_ID = settings.SPOTIFY_SHOW_ID
+        self.CLIENT_ID = settings.SPOTIFY_CLIENT_ID
+        self.CLIENT_SECRET = settings.SPOTIFY_CLIENT_SECRET
         self.BEARER_TOKEN = self._getBearerToken()
 
     def _getBearerToken(self) -> str:
@@ -33,9 +32,9 @@ class SpotifyClient:
             f"{self.ENDPOINT_ACCOUNT}/token",
             f"grant_type=client_credentials&client_id={self.CLIENT_ID}&client_secret={self.CLIENT_SECRET}",
         )
-        if "access_token" in data.keys():
-            return data["access_token"]
-        return ""
+        if "access_token" not in data:
+            raise RuntimeError(f"Spotify authentication failed: {data}")
+        return data["access_token"]
 
     def _post(self, endpoint: str, data: str = "") -> dict:
         """Sends a POST request to the given Spotify API endpoint"""
@@ -69,6 +68,14 @@ class SpotifyClient:
                     episodes.append(item)
             response = newResponse
 
+        return self._parse_episodes(episodes)
+
+    def fetch_recent_episodes(self, limit: int = 50) -> list[RemoteEpisode]:
+        """Gets the most recently released episodes for the given Show"""
+        response = self._fetch_episodes(limit=limit)
+        return self._parse_episodes(response.get("items", []))
+
+    def _parse_episodes(self, items: list[dict]) -> list[RemoteEpisode]:
         return [
             RemoteEpisode(
                 episode_id=item["id"],
@@ -80,5 +87,5 @@ class SpotifyClient:
                 description=item.get("description", ""),
                 api_data=item,
             )
-            for item in episodes
+            for item in items
         ]

@@ -18,15 +18,17 @@ class RemoteVideo:
 class YoutubeClient:
     API_SERVICE_NAME: str = "youtube"
     API_VERSION: str = "v3"
-    DEVELOPER_KEY: str = settings.YOUTUBE_API_KEY
-    CHANNEL_ID: str = settings.YOUTUBE_CHANNEL_ID
-    PLAYLIST_ID: str = "UU" + CHANNEL_ID[2:]
 
     def __init__(self):
+        self.DEVELOPER_KEY = settings.YOUTUBE_API_KEY
+        self.CHANNEL_ID = settings.YOUTUBE_CHANNEL_ID
+
         if not self.DEVELOPER_KEY:
             raise AttributeError("No YouTube API key provided")
         if not self.CHANNEL_ID:
             raise AttributeError("No YouTube channel ID provided")
+
+        self.PLAYLIST_ID = "UU" + self.CHANNEL_ID[2:]
 
         # Disable OAuthlib's HTTPS verification when running locally.
         # *DO NOT* leave this option enabled in production.
@@ -61,20 +63,7 @@ class YoutubeClient:
             if not response or not response.get("items"):
                 break
 
-            videos.extend(
-                [
-                    RemoteVideo(
-                        id=item["snippet"]["resourceId"]["videoId"],
-                        publishedAt=datetime.strptime(
-                            item["snippet"]["publishedAt"], "%Y-%m-%dT%H:%M:%SZ"
-                        ).replace(tzinfo=timezone.utc),
-                        title=item["snippet"]["title"],
-                        description=item["snippet"]["description"],
-                        api_data=item,
-                    )
-                    for item in response.get("items", [])
-                ]
-            )
+            videos.extend(self._parse_videos(response.get("items", [])))
 
             page_token = response.get("nextPageToken")
             if not page_token:
@@ -89,6 +78,9 @@ class YoutubeClient:
         if not response or not response.get("items"):
             return []
 
+        return self._parse_videos(response.get("items", []))
+
+    def _parse_videos(self, items: list[dict]) -> list[RemoteVideo]:
         return [
             RemoteVideo(
                 id=item["snippet"]["resourceId"]["videoId"],
@@ -99,5 +91,5 @@ class YoutubeClient:
                 description=item["snippet"]["description"],
                 api_data=item,
             )
-            for item in response.get("items", [])
+            for item in items
         ]

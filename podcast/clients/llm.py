@@ -3,7 +3,7 @@ from typing import Optional
 
 import litellm
 from django.conf import settings
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
 
@@ -38,11 +38,21 @@ class EpisodeRenamedData(BaseModel):
 class LLMClient:
     def __init__(
         self,
-        model: str = settings.LLM_API_MODEL,
-        api_base: str = settings.LLM_API_BASE,
+        model: Optional[str] = None,
+        api_base: Optional[str] = None,
     ):
-        self.model = model
-        self.api_base = api_base
+        self.model = model or settings.LLM_API_MODEL
+        self.api_base = api_base or settings.LLM_API_BASE
+
+    def _complete(self, prompt: str, response_model: type[BaseModel]) -> BaseModel:
+        response = litellm.completion(
+            model=self.model,
+            messages=[{"role": "user", "content": prompt}],
+            response_format=response_model,
+            api_base=self.api_base,
+        )
+        raw_content = response.choices[0].message.content
+        return response_model.model_validate_json(raw_content)
 
     def identify_episode(self, title: str) -> Optional[EpisodeIdentityData]:
         prompt = (
@@ -61,17 +71,8 @@ class LLMClient:
         )
 
         try:
-            response = litellm.completion(
-                model=self.model,
-                messages=[{"role": "user", "content": prompt}],
-                response_format=EpisodeIdentityData,
-                api_base=self.api_base,
-            )
-
-            raw_content = response.choices[0].message.content
-            data = EpisodeIdentityData.model_validate_json(raw_content)
-
-        except (ValidationError, Exception) as e:
+            data = self._complete(prompt, EpisodeIdentityData)
+        except Exception as e:
             logger.error(f"Failed to process video '{title}': {e}")
             return None
 
@@ -96,17 +97,8 @@ class LLMClient:
         )
 
         try:
-            response = litellm.completion(
-                model=self.model,
-                messages=[{"role": "user", "content": prompt}],
-                response_format=EpisodeRenamedData,
-                api_base=self.api_base,
-            )
-
-            raw_content = response.choices[0].message.content
-            data = EpisodeRenamedData.model_validate_json(raw_content)
-
-        except (ValidationError, Exception) as e:
+            data = self._complete(prompt, EpisodeRenamedData)
+        except Exception as e:
             logger.error(f"Failed to rename episode '{title}': {e}")
             return title
 
