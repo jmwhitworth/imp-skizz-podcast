@@ -129,7 +129,7 @@ def spotifyepisode_import() -> int:
         return 0
 
     with transaction.atomic():
-        records = SpotifyEpisode.objects.bulk_create(
+        SpotifyEpisode.objects.bulk_create(
             [
                 SpotifyEpisode(
                     episode_id=item.episode_id,
@@ -148,6 +148,11 @@ def spotifyepisode_import() -> int:
             unique_fields=["episode_id"],
             update_fields=["title", "description", "api_data", "preview_url"],
         )
+
+    # Re-fetch from db to ensure we have correct pks
+    records = SpotifyEpisode.objects.filter(
+        episode_id__in=[item.episode_id for item in items]
+    )
 
     for record in records:
         if not record.podcasts.exists():
