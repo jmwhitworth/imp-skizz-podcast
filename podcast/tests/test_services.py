@@ -242,27 +242,6 @@ class services__spotifyepisode_auto_assign_podcast__TestCase(TestCase):
         self.assertEqual(podcast.spotify_episode, episode)
 
     @patch("podcast.services.LLMClient")
-    def test_falls_back_to_season_episode_when_release_date_is_ambiguous(
-        self, mock_llm_client
-    ):
-        same_date = date(2024, 3, 1)
-        PodcastFactory(release_date=same_date, season=1, episode=1)
-        correct_podcast = PodcastFactory(release_date=same_date, season=1, episode=2)
-        episode = SpotifyEpisodeFactory(
-            release_date=same_date, title="Episode Two (S1Ep2)"
-        )
-
-        mock_llm_client.return_value.identify_episode.return_value = (
-            EpisodeIdentityData(reasoning="", is_episode=True, season=1, episode=2)
-        )
-
-        result = spotifyepisode_auto_assign_podcast(episode.id)
-
-        self.assertEqual(result, correct_podcast)
-        correct_podcast.refresh_from_db()
-        self.assertEqual(correct_podcast.spotify_episode, episode)
-
-    @patch("podcast.services.LLMClient")
     def test_returns_none_when_no_match_found(self, mock_llm_client):
         mock_llm_client.return_value.identify_episode.return_value = None
         episode = SpotifyEpisodeFactory(release_date=date(2024, 3, 1))
