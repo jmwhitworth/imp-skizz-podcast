@@ -1,0 +1,43 @@
+<div class="mb-4 flex flex-col-reverse md:flex-row justify-center md:justify-end items-center gap-4 md:gap-8">
+<button
+    type="button"
+    class="underline cursor-pointer hidden"
+    id="clear-filters"
+>
+    Clear Filters
+</button>
+
+<form
+    id="filters-form"
+    class="flex flex-col md:flex-row justify-end gap-2 w-full md:w-max"
+    hx-get="{% url 'podcast_index' %}"
+    hx-target="#podcast-grid"
+    hx-swap="outerHTML"
+    hx-push-url="true"
+>
+    {% if season_numbers %}
+    <label for="search" class="sr-only">Search:</label>
+    <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Podcast title"
+        class="rounded border-2 lg:min-w-92 md:min-w-72 border-gray-200/20 bg-gray-950 py-2 px-4"
+    />
+
+    <label for="season" class="sr-only">Season:</label>
+    <select id="season" name="season" class="rounded border-2  border-gray-200/20 bg-gray-950 py-2 pl-4 pr-8">
+        <option value="all" selected>All Seasons</option>
+        {% for season_number in season_numbers %}
+            <option value="{{ season_number }}">Season {{ season_number }}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
+
+    <button
+        type="submit"
+        class="rounded border-2 border-gray-200/20 bg-gray-950 py-2 px-4">
+        Search
+    </button>
+</form>
+</div>

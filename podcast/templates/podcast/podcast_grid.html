@@ -1,6 +1,4 @@
-
-
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+<div id="podcast-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
     {% for podcast in podcasts %}
         <div class="space-y-4 rounded-lg border-2 border-gray-200/20 bg-gray-950 p-4 pb-6 text-gray-100 transition-colors duration-200 hover:border-gray-200/30">
             <figure class="relative w-full overflow-hidden rounded-t-md pb-[56.25%]">
@@ -41,7 +39,7 @@
                 <div class="pb-4">
                     <span class="mb-1 block font-semibold">Preview:</span>
                     <audio controls="controls" class="w-full rounded-full bg-blue-900">
-                        <source :src="podcast.spotify_episode.preview_url" type="audio/mpeg" />
+                        <source src="{{ podcast.spotify_episode.preview_url }}" type="audio/mpeg" />
                     </audio>
                 </div>
             {% endif %}

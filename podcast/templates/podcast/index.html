@@ -3,6 +3,8 @@
 
 {% block content %}
     <section class="container mx-auto px-4">
+        {% include "podcast/filters.html" %}
+
         {% include "podcast/podcast_grid.html" %}
     </section>
 {% endblock %}
