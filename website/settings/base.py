@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "corsheaders",
     "django_tasks_db",
+    "django_htmx",
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "website.urls"

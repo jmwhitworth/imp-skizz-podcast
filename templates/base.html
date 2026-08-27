@@ -20,8 +20,12 @@
         {% vite_asset 'js/main.js' %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{% block body_class %}bg-gray-900 text-gray-100{% endblock %}">
+        {% include "header.html" %}
+
         {% block content %}{% endblock %}
+
+        {% include "footer.html" %}
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}

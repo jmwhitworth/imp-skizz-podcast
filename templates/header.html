@@ -1,0 +1,71 @@
+{% load static django_vite %}
+
+<header>
+    <section
+        class="container  px-4 mx-auto mb-16 flex flex-col items-start justify-between gap-8 pt-8 md:flex-row md:items-end"
+    >
+        <a href="/" class="flex items-center gap-4">
+            <img
+                alt="Imp and Skizz Podcast logo"
+                src="{% static 'logo-medium.webp' %}"
+                width="125"
+                height="125"
+                class="size-20"
+            />
+            <h1 class="text-2xl font-bold">Imp and Skizz Podcast Index</h1>
+        </a>
+        <ul
+            class="flex flex-row flex-wrap gap-x-2 gap-y-6 sm:flex sm:gap-x-4 md:grid md:grid-cols-2 lg:flex lg:gap-y-4"
+        >
+            <li>
+                <a
+                    alt="Imp and Skizz Podcast YouTube channel"
+                    href="https://www.youtube.com/@impandskizzpodcast"
+                    target="_blank"
+                    class="button"
+                >
+                    <span class="sr-only">Watch on YouTube</span>
+                    <i class="fa-brands fa-youtube text-red-500"></i>
+                    {% include "partials/new_tab_icon.html" %}
+                </a>
+            </li>
+            <li>
+
+
+                <a
+                    alt="Imp and Skizz Podcast on Spotify"
+                    href="https://open.spotify.com/show/1EPoDsUI8BnhLbdERd5Y4w"
+                    target="_blank"
+                    class="button"
+                >
+                    <span class="sr-only">Listen on Spotify</span>
+                    <i class="fa-brands fa-spotify text-green-500"></i>
+                    {% include "partials/new_tab_icon.html" %}
+                </a>
+            </li>
+            <li>
+                <a
+                    alt="Imp and Skizz Podcast on Apple Podcasts"
+                    href="https://podcasts.apple.com/gb/podcast/imp-and-skizz-podcast/id1639033817"
+                    target="_blank"
+                    class="button"
+                >
+                    <span class="sr-only">Listen on Apple Podcasts</span>
+                    <i class="fa-brands fa-apple text-purple-500"></i>
+                    {% include "partials/new_tab_icon.html" %}
+                </a>
+            </li>
+            <li>
+                <a
+                    href="https://www.patreon.com/impandskizz"
+                    target="_blank"
+                    class="button"
+                >
+                    <span class="sr-only">Support on Patreon</span>
+                    <i class="fa-brands fa-patreon text-orange-500"></i>
+                    {% include "partials/new_tab_icon.html" %}
+                </a>
+            </li>
+        </ul>
+    </section>
+</header>

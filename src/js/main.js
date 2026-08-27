@@ -13,3 +13,16 @@ import.meta.glob('./vendor/*.js', {
 import.meta.glob('./*.js', {
     eager: true,
 })
+
+import 'htmx.org'
+
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import {
+    faPatreon,
+    faYoutube,
+    faSpotify,
+    faApple,
+} from '@fortawesome/free-brands-svg-icons'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+library.add(faPatreon, faYoutube, faSpotify, faApple, faArrowUpRightFromSquare)
+dom.watch()
