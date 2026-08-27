@@ -1,22 +1,22 @@
 from django.tasks import task
 
 from .services import (
-    podcast_update_title,
-    spotifyepisode_assign_podcast,
-    youtubevideo_create_podcast,
+    podcast_create_from_youtubevideo_id,
+    podcast_debrand_title,
+    spotifyepisode_auto_assign_podcast,
 )
 
 
 @task
-def podcast_update_title_task(podcast_id) -> bool:
-    return podcast_update_title(podcast_id)
+def podcast_create_from_youtubevideo_id_task(youtubevideo_id) -> None:
+    podcast_create_from_youtubevideo_id(youtubevideo_id)
 
 
 @task
-def youtubevideo_create_podcast_task(youtubevideo_id) -> None:
-    youtubevideo_create_podcast(youtubevideo_id)
+def podcast_debrand_title_task(podcast_id) -> None:
+    podcast_debrand_title(podcast_id)
 
 
 @task
-def spotifyepisode_assign_podcast_task(spotifyepisode_id) -> None:
-    spotifyepisode_assign_podcast(spotifyepisode_id)
+def spotifyepisode_auto_assign_podcast_task(spotifyepisode_id) -> None:
+    spotifyepisode_auto_assign_podcast(spotifyepisode_id)

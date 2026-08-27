@@ -3,25 +3,25 @@ from django.dispatch import receiver
 
 from .models import Podcast, SpotifyEpisode, YoutubeVideo
 from .tasks import (
-    podcast_update_title_task,
-    spotifyepisode_assign_podcast_task,
-    youtubevideo_create_podcast_task,
+    podcast_create_from_youtubevideo_id_task,
+    podcast_debrand_title_task,
+    spotifyepisode_auto_assign_podcast_task,
 )
 
 
 @receiver(post_save, sender=YoutubeVideo)
 def youtubevideo_created(sender, instance, created, **kwargs):
     if created:
-        youtubevideo_create_podcast_task.enqueue(str(instance.id))
+        podcast_create_from_youtubevideo_id_task.enqueue(str(instance.id))
 
 
 @receiver(post_save, sender=Podcast)
 def podcast_created(sender, instance, created, **kwargs):
     if created:
-        podcast_update_title_task.enqueue(str(instance.id))
+        podcast_debrand_title_task.enqueue(str(instance.id))
 
 
 @receiver(post_save, sender=SpotifyEpisode)
 def spotifyepisode_created(sender, instance, created, **kwargs):
     if created:
-        spotifyepisode_assign_podcast_task.enqueue(str(instance.id))
+        spotifyepisode_auto_assign_podcast_task.enqueue(str(instance.id))
