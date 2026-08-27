@@ -5,23 +5,23 @@ ENVIRONMENT = "production"
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "my.domain",
-    ".my.domain",
+    "impandskizzpodcast.com",
+    ".impandskizzpodcast.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ORIGINS = [
-    "https://my.domain",
-    "https://www.my.domain",
+    "https://impandskizzpodcast.com",
+    "https://www.impandskizzpodcast.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://my.domain",
-    "https://*.my.domain",
+    "https://impandskizzpodcast.com",
+    "https://*.impandskizzpodcast.com",
 ]
 
 INTERNAL_IPS = [
-    "127.0.0.1",
+    "217.154.57.184",
 ]
 
 LOGGING = {
