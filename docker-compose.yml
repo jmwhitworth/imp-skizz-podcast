@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: django_boilerplate_web
+    container_name: imp_skizz_podcast_web
     # Commented out as Dokploy uses traefik for routing
     #ports:
       #- "8000:8000"
@@ -22,7 +22,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: django_boilerplate_worker
+    container_name: imp_skizz_podcast_worker
     depends_on:
       - web
     env_file:
