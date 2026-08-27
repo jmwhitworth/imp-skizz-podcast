@@ -4,8 +4,13 @@ from common.models import BaseModel
 from status.models import StatusModelMixin, StatusQuerySet
 
 
+class PodcastQuerySet(StatusQuerySet):
+    def get_queryset(self):
+        return super().get_queryset().fetch_mode(models.FETCH_PEERS)
+
+
 class Podcast(StatusModelMixin, BaseModel):
-    objects = StatusQuerySet.as_manager()
+    objects = PodcastQuerySet.as_manager()
 
     title = models.CharField(max_length=255)
     release_date = models.DateField()
