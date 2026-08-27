@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@source "../../**/*.html";
+@source "../../**/*.py";
+
+.button {
+    @apply rounded-lg border-2 border-gray-200/20 px-4 py-2 font-semibold shadow-lg transition-colors hover:border-gray-200/30;
+}

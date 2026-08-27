@@ -1,0 +1,92 @@
+{% load podcast_tags %}
+
+<div id="podcast-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+    {% for podcast in podcasts %}
+        <div class="space-y-4 rounded-lg border-2 border-gray-200/20 bg-gray-950 p-4 pb-6 text-gray-100 transition-colors duration-200 hover:border-gray-200/30">
+            <figure class="relative w-full overflow-hidden rounded-t-md pb-[56.25%]">
+                <img
+                    src="{{ podcast.youtube_video.thumbnail_medium }}"
+                    srcset="{{ podcast.youtube_video.thumbnail_default }} 120w,
+                            {{ podcast.youtube_video.thumbnail_medium }} 320w,
+                            {{ podcast.youtube_video.thumbnail_high }} 480w,"
+                    sizes="(max-width: 767px) 90vw, (max-width: 1024px) 41vw, 27vw"
+                    alt="YouTube thumbnail for {{ podcast.title }}"
+                    width="320"
+                    height="180"
+                    loading="eager"
+                    class="absolute top-[-16.75%] right-0 bottom-0 left-0 w-full object-center"
+                />
+            </figure>
+
+            <h2 class="text-xl font-bold">{{ podcast.title }}</h2>
+
+            <ul class="border-l-2 border-yellow-400 pl-4">
+                <li>
+                    Season: <b>{{ podcast.season }}</b>
+                </li>
+                <li>
+                    Episode: <b>{{ podcast.episode }}</b>
+                </li>
+                <li>
+                    Date: <b>{{ podcast.release_date|date:"F j, Y" }}</b>
+                </li>
+                {% if podcast.spotify_episode.duration_ms %}
+                    <li>
+                        Duration: <b>{{ podcast.spotify_episode.duration_ms|format_milliseconds }}</b>
+                    </li>
+                {% endif %}
+            </ul>
+
+            {% if podcast.spotify_episode.preview_url %}
+                <div class="pb-4">
+                    <span class="mb-1 block font-semibold">Preview:</span>
+                    <audio controls="controls" class="w-full rounded-full bg-blue-900">
+                        <source src="{{ podcast.spotify_episode.preview_url }}" type="audio/mpeg" />
+                    </audio>
+                </div>
+            {% endif %}
+            {% if podcast.youtube_video.href or podcast.spotify_episode.href %}
+                <ul class="flex gap-2">
+                    {% if podcast.youtube_video.href %}
+                        <li>
+                            <a
+                                alt="Watch this episode on YouTube"
+                                href="{{ podcast.youtube_video.href }}"
+                                target="_blank"
+                                class="button"
+                            >
+                                <span class="sr-only">Watch on YouTube</span>
+                                <i class="fa-brands fa-youtube text-red-500"></i>
+                                {% include "partials/new_tab_icon.html" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if podcast.spotify_episode.href %}
+                        <li>
+                            <a
+                                alt="Listen to this episode on Spotify"
+                                href="{{ podcast.spotify_episode.href }}"
+                                target="_blank"
+                                class="button"
+                            >
+                                <span class="sr-only">Listen on Spotify</span>
+                                <i class="fa-brands fa-spotify text-green-500"></i>
+                                {% include "partials/new_tab_icon.html" %}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% comment %}
+                <li v-if="podcast.apple_music_url">
+                <Apple
+                    alt="Listen to this episode on Apple Podcasts"
+                    :href="podcast.apple_music_url"
+                    target="_blank"
+                    >Apple Podcasts</Apple
+                >
+                </li>
+                {% endcomment %}
+                </ul>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

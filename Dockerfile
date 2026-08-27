@@ -13,6 +13,17 @@ COPY pyproject.toml uv.lock README.md ./
 
 RUN uv sync --locked --no-install-project --no-dev && rm -rf $UV_CACHE_DIR
 
+# Node build stage for static assets
+FROM node:22.21-slim AS nodebuilder
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+RUN npm run build
+
 # Final runtime stage
 FROM python:3.13-slim AS runtime
 
@@ -24,5 +35,7 @@ COPY --from=pythonbuilder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 WORKDIR /app
 
 COPY . .
+
+COPY --from=nodebuilder /app/src_compiled ./src_compiled
 
 EXPOSE 8000
