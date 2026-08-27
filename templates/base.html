@@ -4,11 +4,26 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>{% block title %}Django boilerplate{% endblock %}</title>
+        <title>{% block title %}Imp and Skizz Podcast{% endblock %}</title>
+        <meta name="description" content="{% block description %}Browse all episodes of the Imp and Skizz Podcast.{% endblock %}" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}">
-        <link rel="alternate icon" type="image/png" href="{% static 'favicon.png' %}">
+        <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+        {# Open Graph #}
+        <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+        <meta property="og:site_name" content="Imp and Skizz Podcast Index" />
+        <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+        <meta property="og:title" content="{% block og_title %}Imp and Skizz Podcast Index{% endblock %}" />
+        <meta property="og:description" content="{% block og_description %}Browse all episodes of the Imp and Skizz Podcast.{% endblock %}" />
+        <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'imp-skizz-podcast-og.jpg' %}{% endblock %}" />
+
+        {# Twitter #}
+        <meta name="twitter:card" content="{% block twitter_card %}summary_large_image{% endblock %}" />
+        <meta name="twitter:title" content="{% block twitter_title %}Imp and Skizz Podcast Index{% endblock %}" />
+        <meta name="twitter:description" content="{% block twitter_description %}Browse all episodes of the Imp and Skizz Podcast.{% endblock %}" />
+        <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'imp-skizz-podcast-og.jpg' %}{% endblock %}" />
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}

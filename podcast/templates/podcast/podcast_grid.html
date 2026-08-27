@@ -1,3 +1,5 @@
+{% load podcast_tags %}
+
 <div id="podcast-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" aria-live="polite">
     {% for podcast in podcasts %}
         <div class="space-y-4 rounded-lg border-2 border-gray-200/20 bg-gray-950 p-4 pb-6 text-gray-100 transition-colors duration-200 hover:border-gray-200/30">
@@ -30,7 +32,7 @@
                 </li>
                 {% if podcast.spotify_episode.duration_ms %}
                     <li>
-                        Duration: <b>{{ podcast.spotify_episode.duration_ms }}</b>
+                        Duration: <b>{{ podcast.spotify_episode.duration_ms|format_milliseconds }}</b>
                     </li>
                 {% endif %}
             </ul>
