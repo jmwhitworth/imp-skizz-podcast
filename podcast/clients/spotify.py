@@ -88,4 +88,5 @@ class SpotifyClient:
                 api_data=item,
             )
             for item in items
+            if item is not None
         ]
