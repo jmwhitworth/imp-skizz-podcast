@@ -104,12 +104,16 @@ def podcast_debrand_title(podcast_id) -> bool:
     return False
 
 
-def youtubevideo_import() -> int:
+def youtubevideo_import(all: bool = False) -> int:
     """
     Imports recent YouTube videos and creates corresponding podcast entries.
+    If `all` is True, imports all available videos, otherwise imports only recent ones.
     Returns the number of YouTube videos imported and corresponding podcast entries created.
     """
-    items = YoutubeClient().fetch_recent_uploads()
+    if all:
+        items = YoutubeClient().fetch_all_uploads()
+    else:
+        items = YoutubeClient().fetch_recent_uploads()
 
     if not items:
         return 0
@@ -159,12 +163,15 @@ def spotifyepisode_auto_assign_podcast(spotifyepisode_id) -> Optional[Podcast]:
     return podcast
 
 
-def spotifyepisode_import() -> int:
+def spotifyepisode_import(all: bool = False) -> int:
     """
     Imports recent Spotify episodes and creates corresponding podcast entries.
     Returns the number of Spotify episodes imported and corresponding podcast entries created.
     """
-    items = SpotifyClient().fetch_recent_episodes()
+    if all:
+        items = SpotifyClient().fetch_all_episodes()
+    else:
+        items = SpotifyClient().fetch_recent_episodes()
 
     if not items:
         return 0
